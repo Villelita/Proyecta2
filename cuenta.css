@@ -3,10 +3,19 @@
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 /* Tipografía cuenta */
 body.cuenta-page {
   font-family: 'Inter', sans-serif;
+}
+
+/* Variables CSS */
+:root {
+  --utch-verde: #1a5f3d;
+  --utch-verde-claro: #2d8a5a;
+  --utch-verde-hover: #164d32;
+  --extraordinaria: #ef4444;
 }
 
 .utch-green {
@@ -80,7 +89,244 @@ body.cuenta-page {
     display: block;
   }
 
-  #menu-toggle:checked ~ .sidebar-nav {
+    #menu-toggle:checked ~ .sidebar-nav {
     transform: translateX(0);
+  }
+}
+
+/* Ajuste del contenido principal para el sidebar */
+@media (min-width: 769px) {
+  body.cuenta-page main {
+    width: calc(100% - 256px);
+  }
+}
+
+/* ============================================
+   Header Completo (como en información del alumno)
+   ============================================ */
+
+.header-cuenta {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.header-inner-cuenta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.logo-cuenta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hamburger-btn-cuenta {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  margin-right: 0.75rem;
+  transition: background 0.2s;
+}
+
+.hamburger-btn-cuenta:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hamburger-btn-cuenta i {
+  font-size: 1.5rem;
+}
+
+.logo-icon-cuenta {
+  width: 36px;
+  height: 36px;
+  background: var(--utch-verde);
+  color: #fff;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-text-cuenta {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.nav-main-cuenta {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-main-cuenta a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-main-cuenta a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.header-actions-cuenta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon-btn-cuenta {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.icon-btn-cuenta:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.badge-cuenta {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--extraordinaria);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.user-info-cuenta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar-cuenta {
+  width: 36px;
+  height: 36px;
+  background: var(--utch-verde-claro);
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.matricula-cuenta {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.btn-logout-cuenta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  background: rgba(239, 68, 68, 0.9);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  text-decoration: none;
+}
+
+.btn-logout-cuenta:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+.btn-calendar-cuenta {
+  width: 42px;
+  height: 42px;
+  background: var(--utch-verde);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-calendar-cuenta:hover {
+  background: var(--utch-verde-hover);
+  transform: translateY(-1px);
+}
+
+
+@media (max-width: 768px) {
+  .hamburger-btn-cuenta {
+    display: flex;
+  }
+
+  .nav-main-cuenta {
+    display: none;
+  }
+
+  .header-actions-cuenta {
+    gap: 0.5rem;
+  }
+
+  .icon-btn-cuenta,
+  .btn-calendar-cuenta {
+    width: 36px;
+    height: 36px;
+  }
+
+  .avatar-cuenta,
+  .matricula-cuenta {
+    display: none;
+  }
+
+  .btn-logout-cuenta {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
   }
 }
