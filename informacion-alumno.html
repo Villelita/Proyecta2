@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Información del Alumno - Mi Expediente | Proyecta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="informacion-alumno.css">
+</head>
+<body>
+  <!-- Cabecera -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">P</span>
+        <span class="logo-text">PROYECTA</span>
+      </div>
+      <nav class="nav-main">
+        <a href="#">Inicio</a>
+        <a href="#">Cuenta</a>
+        <a href="#">Registro Vehicular</a>
+        <a href="#">Encuestas</a>
+        <a href="#">Calendario</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" title="Notificaciones">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span class="badge">275</span>
+        </button>
+        <div class="user-info">
+          <div class="avatar">RA</div>
+          <span class="matricula">6522150018</span>
+        </div>
+        <button class="btn-logout" title="Cerrar sesión">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          Salir
+        </button>
+        <button class="btn-calendar" title="Calendario">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </button>
+      </div>
+    </div>
+    <div class="header-utch">
+      <span>Powered By UTCH Universidad Tecnológica de Chihuahua</span>
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect fill='%231a5f3d' width='32' height='32' rx='4'/%3E%3Ctext x='16' y='22' font-size='14' fill='white' text-anchor='middle' font-family='sans-serif'%3EUTCH%3C/text%3E%3C/svg%3E" alt="UTCH" class="utch-logo">
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Título y botón volver -->
+    <div class="page-head">
+      <a href="#" class="btn-back" aria-label="Volver">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </a>
+      <h1 class="page-title">Expediente</h1>
+    </div>
+
+    <!-- Tres columnas: Básica, Información Escolar, Otros Datos -->
+    <section class="expediente-grid">
+      <article class="card card-basica">
+        <div class="card-header">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <h2>Básica</h2>
+        </div>
+        <div class="card-body">
+          <div class="foto-perfil">
+            <div class="foto-placeholder">RA</div>
+          </div>
+          <dl class="data-list">
+            <dt>Nombre</dt>
+            <dd>ROHAN ANTONIO</dd>
+            <dt>Ape. Paterno</dt>
+            <dd>DOMINGUEZ</dd>
+            <dt>Ape. Materno</dt>
+            <dd>FLORES</dd>
+            <dt>CURP</dt>
+            <dd>DOFR040509HCHMLHA6</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="card card-escolar">
+        <div class="periodo-actual">
+          <span>Periodo actual: 77 - Ene-Abr-26</span>
+        </div>
+        <div class="card-header">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <h2>Información Escolar</h2>
+        </div>
+        <div class="card-body">
+          <dl class="data-list">
+            <dt>Matrícula</dt>
+            <dd>6522150018</dd>
+            <dt>Situación</dt>
+            <dd>Regular Ingeniería</dd>
+            <dt>Periodo</dt>
+            <dd>ENERO-ABRIL 2026</dd>
+            <dt>Unidad</dt>
+            <dd>BIS</dd>
+            <dt>Carrera</dt>
+            <dd>Desarrollo y Gestión de Software</dd>
+            <dt>Grado</dt>
+            <dd>7</dd>
+            <dt>Grupo</dt>
+            <dd>IDGSBIS71N</dd>
+            <dt>Tutor</dt>
+            <dd><a href="mailto:acarrillo@utch.edu.mx">M.E.S. ANTONIO CARRILLO VENEGAS</a></dd>
+            <dt>Plan de Estudios</dt>
+            <dd>Desarrollo y Gestión de Software COMPETENCIAS (Inicia: 2021 | Origen: 2020)</dd>
+            <dt>Turno</dt>
+            <dd>NOCTURNO</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="card card-otros">
+        <div class="card-header">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <h2>Otros Datos</h2>
+        </div>
+        <div class="card-body">
+          <dl class="data-list">
+            <dt>Teléfono</dt>
+            <dd>Casa: 6143230186 · Celular: 6143230186</dd>
+            <dt>Domicilio</dt>
+            <dd>PASEOS DEL FALABELLA # 9226 COLONIA PASEOS DEL CAMINO REAL C.P. 31384</dd>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <!-- Acciones: pestañas -->
+    <section class="acciones">
+      <h2 class="acciones-title">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        Acciones
+      </h2>
+      <div class="tabs">
+        <button class="tab tab-active" data-tab="calificaciones" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Calificaciones
+        </button>
+        <button class="tab" data-tab="asistencias" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          Asistencias
+        </button>
+        <button class="tab" data-tab="estadias" type="button">Calificación de Informe de Estadías</button>
+        <button class="tab" data-tab="boletas" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Boletas
+        </button>
+      </div>
+
+      <!-- Panel Calificaciones -->
+      <div id="panel-calificaciones" class="tab-panel tab-panel-active">
+        <div class="tab-content-header tab-header-calificaciones">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Calificaciones</span>
+        </div>
+        <p class="leyenda-aviso">Colores en calificaciones (La tabla de colores aplica a periodos posteriores a May-Ago-12)</p>
+        <div class="leyenda-colores">
+          <table class="leyenda-table">
+            <thead><tr><th>Color</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td><span class="color-box color-ordinario"></span></td><td>Ordinario</td></tr>
+              <tr><td><span class="color-box color-recuperacion"></span></td><td>Recuperación</td></tr>
+              <tr><td><span class="color-box color-extraordinaria"></span></td><td>Evaluación Extraordinaria</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="periodo-bar">
+          <span>Periodo: ENERO-ABRIL 2026</span>
+          <span>Grupo: IDGSBIS71N</span>
+          <span>Grado: Séptimo</span>
+          <span>Promedio: 6</span>
+        </div>
+        <div class="table-wrap">
+          <table class="tabla-materias">
+            <thead>
+              <tr><th>Materia</th><th>Profesor</th><th>U1</th><th>U2</th><th>U3</th><th>U4</th><th>Promedio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>MATEMÁTICAS PARA INGENIERÍA I</td><td>DR. IVÁN JALIL ANTÓN CARREÑO MÁRQUEZ</td><td>X</td><td>X</td><td>X</td><td>X</td><td>—</td></tr>
+              <tr><td>METODOLOGÍAS PARA EL DESARROLLO DE PROYECTOS</td><td>ING. MARTÍN DANIEL MELÉNDEZ DOMÍNGUEZ</td><td>X</td><td>X</td><td>X</td><td>—</td><td>—</td></tr>
+              <tr><td>ARQUITECTURAS DE SOFTWARE</td><td>ING. ROBERTO AGUIRRE RODRÍGUEZ</td><td>X</td><td>X</td><td>X</td><td>—</td><td>—</td></tr>
+              <tr><td>EXPERIENCIA DE USUARIO</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>X</td><td>X</td><td>X</td><td>—</td><td>—</td></tr>
+              <tr><td>SEGURIDAD INFORMÁTICA</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>X</td><td>X</td><td>X</td><td>—</td><td>—</td></tr>
+              <tr><td>INGLÉS VI</td><td>M.E.S. ANTONIO CARRILLO VENEGAS</td><td>X</td><td>X</td><td>—</td><td>—</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="historial-periodos">
+          <h3>Historial por periodo</h3>
+          <ul class="lista-periodos">
+            <li><span class="p-periodo">Periodo: SEPTIEMBRE-DICIEMBRE 2025</span> <span class="p-grupo">Grupo: TIDBIS62M</span> <span class="p-grado">Grado: Sexto</span></li>
+            <li><span class="p-periodo">Periodo: MAYO-AGOSTO 2025</span> <span class="p-grupo">Grupo: TIDBIS52M</span> <span class="p-grado">Grado: Quinto</span> <span class="p-promedio">Promedio: 9</span></li>
+            <li><span class="p-periodo">Periodo: ENERO-ABRIL 2025</span> <span class="p-grupo">Grupo: TIDBIS42M</span> <span class="p-grado">Grado: Cuarto</span> <span class="p-promedio">Promedio: 9</span></li>
+            <li><span class="p-periodo">Periodo: SEPTIEMBRE-DICIEMBRE 2022</span> <span class="p-grupo">Grupo: TIDBIS01M</span> <span class="p-grado">Grado: Programa propedéutico</span> <span class="p-promedio">Promedio: 10</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Panel Asistencias -->
+      <div id="panel-asistencias" class="tab-panel">
+        <div class="tab-content-header">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>Asistencias</span>
+        </div>
+        <div class="leyenda-colores">
+          <table class="leyenda-table">
+            <thead><tr><th>Color</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td><span class="color-box color-ordinario"></span></td><td>Faltas menores a 10%</td></tr>
+              <tr><td><span class="color-box color-recuperacion"></span></td><td>Faltas igual o superiores a 10% y menores o igual a 20%</td></tr>
+              <tr><td><span class="color-box color-extraordinaria"></span></td><td>Faltas superiores a 20%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="leyenda-aviso leyenda-retardos">*Cada 3 retardos sumarán una falta en la materia.</p>
+        <h3 class="tabla-asistencias-titulo">Asistencias del periodo ENERO-ABRIL 2026</h3>
+        <div class="table-wrap">
+          <table class="tabla-asistencias">
+            <thead>
+              <tr>
+                <th>Materia</th>
+                <th>Profesor</th>
+                <th># Faltas para Reprobar</th>
+                <th>Asistencias</th>
+                <th>Faltas</th>
+                <th>Retardo</th>
+                <th>Total Faltas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>MATEMÁTICAS PARA INGENIERÍA I</td><td>DR. IVÁN JALIL ANTÓN CARREÑO MÁRQUEZ</td><td>11</td><td>9</td><td>0</td><td>3</td><td class="celda-verde">1</td></tr>
+              <tr><td>METODOLOGÍAS PARA EL DESARROLLO DE PROYECTOS</td><td>ING. MARTÍN DANIEL MELÉNDEZ DOMÍNGUEZ</td><td>8</td><td>8</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
+              <tr><td>ARQUITECTURAS DE SOFTWARE</td><td>ING. ROBERTO AGUIRRE RODRÍGUEZ</td><td>14</td><td>20</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
+              <tr><td>EXPERIENCIA DE USUARIO</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>8</td><td>7</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
+              <tr><td>SEGURIDAD INFORMÁTICA</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>8</td><td>5</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
+              <tr><td>INGLÉS VI</td><td>M.E.S. ANTONIO CARRILLO VENEGAS</td><td>14</td><td>9</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
+              <tr><td>ADMINISTRACIÓN DEL TIEMPO</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>8</td><td>2</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Panel Calificación de Informe de Estadías -->
+      <div id="panel-estadias" class="tab-panel">
+        <div class="tab-content-header tab-header-estadias">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <span>Calificación de Informe de Estadías</span>
+        </div>
+        <div class="table-wrap">
+          <table class="tabla-estadias">
+            <thead>
+              <tr>
+                <th>Evaluación</th>
+                <th>Criterio</th>
+                <th>Descripción</th>
+                <th>Observación</th>
+                <th>Calificación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="fila-sin-datos">
+                <td colspan="5">No tienes ningún criterio con oportunidad de mejora</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Panel Boletas -->
+      <div id="panel-boletas" class="tab-panel">
+        <div class="tab-content-header tab-header-boletas">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>Boletas</span>
+        </div>
+        <div class="table-wrap">
+          <table class="tabla-boletas">
+            <thead>
+              <tr><th>Periodo - Grupo</th><th>Acciones</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ene-Abr-26 - IDGSBIS71N</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
+              <tr><td>Sept-Dic-25 - TIDBIS62M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
+              <tr><td>May-Ago-25 - TIDBIS52M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
+              <tr><td>Ene-Abr-25 - TIDBIS42M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
+              <tr><td>Sept-Dic-24 - TIDBIS32M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
+              <tr><td>May-Ago-24 - TIDBIS22M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
+              <tr><td>Ene-Abr-23 - TIDBIS11M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
+              <tr><td>Sept-Dic-22 - TIDBIS01M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function() {
+      var tabs = document.querySelectorAll('.tab');
+      var panels = document.querySelectorAll('.tab-panel');
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var targetId = 'panel-' + this.getAttribute('data-tab');
+          tabs.forEach(function(t) { t.classList.remove('tab-active'); });
+          panels.forEach(function(p) {
+            p.classList.remove('tab-panel-active');
+            if (p.id === targetId) p.classList.add('tab-panel-active');
+          });
+          this.classList.add('tab-active');
+          if (history.replaceState) history.replaceState(null, '', '#' + this.getAttribute('data-tab'));
+        });
+      });
+      var hash = location.hash.replace('#', '');
+      if (hash && document.getElementById('panel-' + hash)) {
+        tabs.forEach(function(t) {
+          t.classList.toggle('tab-active', t.getAttribute('data-tab') === hash);
+        });
+        panels.forEach(function(p) {
+          p.classList.toggle('tab-panel-active', p.id === 'panel-' + hash);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
