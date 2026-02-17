@@ -1,0 +1,86 @@
+/* ============================================
+   Proyecta UTCH - Mi Cuenta
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Tipografía cuenta */
+body.cuenta-page {
+  font-family: 'Inter', sans-serif;
+}
+
+.utch-green {
+  background-color: #008744;
+}
+
+.utch-green-text {
+  color: #008744;
+}
+
+/* Menú hamburguesa (solo móvil) - checkbox hack */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.hamburger-btn:hover {
+  background: #f3f4f6;
+}
+
+.hamburger-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 40;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .sidebar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #fff;
+    border-right: 1px solid #e5e7eb;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 50;
+    overflow-y: auto;
+    box-shadow: 4px 0 12px rgba(0,0,0,0.1);
+  }
+
+  #menu-toggle:checked ~ .menu-overlay {
+    display: block;
+  }
+
+  #menu-toggle:checked ~ .sidebar-nav {
+    transform: translateX(0);
+  }
+}
