@@ -1,0 +1,53 @@
+/* ============================================
+   Proyecta UTCH - Estilos globales
+   ============================================ */
+
+/* Tipografía */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Sin subrayado en textos que no son botones */
+a, a:hover, a:focus, a:visited {
+  text-decoration: none !important;
+}
+
+*:not(button):not([type="submit"]) {
+  text-decoration: none !important;
+}
+
+/* ----- Index: Formas decorativas de fondo ----- */
+.bg-pattern {
+  background: linear-gradient(165deg, #0d3320 0%, #0a1f2e 40%, #061018 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34, 197, 94, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-radius: 4px;
+  background: rgba(34, 197, 94, 0.03);
+}
+
+/* ----- Login ----- */
+.bg-login {
+  background: linear-gradient(165deg, #0d3320 0%, #0a1f2e 50%, #061018 100%);
+}
+
+.input-login:focus {
+  outline: none;
+  border-color: rgb(34, 197, 94);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}

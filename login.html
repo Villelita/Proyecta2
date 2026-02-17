@@ -8,20 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    /* Sin subrayado en textos que no son botones */
-    a, a:hover, a:focus { text-decoration: none; }
-    *:not(button):not([type="submit"]) { text-decoration: none; }
-    .bg-login {
-      background: linear-gradient(165deg, #0d3320 0%, #0a1f2e 50%, #061018 100%);
-    }
-    .input-login:focus {
-      outline: none;
-      border-color: rgb(34, 197, 94);
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="min-h-screen bg-login text-white antialiased flex flex-col items-center justify-center p-4">
   <!-- Card de inicio de sesión -->
@@ -38,7 +25,7 @@
       </div>
     </div>
     <!-- Formulario -->
-    <form class="p-6 space-y-5" id="form-login" action="#" method="post">
+    <form class="p-6 space-y-5" id="form-login" action="cuenta.html" method="get">
       <div>
         <label for="usuario" class="flex items-center gap-2 text-sm font-medium text-slate-300 mb-2">
           <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
@@ -72,12 +59,5 @@
     <a href="index.html" class="text-emerald-500 hover:text-emerald-400 transition">← Volver al inicio</a>
   </p>
 
-  <script>
-    document.getElementById('form-login').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Placeholder: aquí iría la lógica de login (ej. redirigir al dashboard)
-      // window.location.href = 'index.html';
-    });
-  </script>
 </body>
 </html>
