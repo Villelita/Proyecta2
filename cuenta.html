@@ -22,84 +22,52 @@
         <nav class="flex-1 overflow-y-auto py-4">
             <ul class="space-y-1 px-3">
                 <li>
-                    <a href="cuenta.html" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md bg-green-50 text-green-700">
-                        <i class="ph ph-user text-lg"></i>
-                        Mi Cuenta
-                    </a>
-                </li>
-                <li>
                     <a href="informacion-alumno.html" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:bg-gray-50 hover:text-gray-900">
                         <i class="ph ph-graduation-cap text-lg"></i>
                         Información del Alumno
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:bg-gray-50 hover:text-gray-900">
-                        <i class="ph ph-sliders text-lg"></i>
-                        Básica
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:bg-gray-50 hover:text-gray-900">
-                        <i class="ph ph-identification-card text-lg"></i>
-                        Información Personal
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:bg-gray-50 hover:text-gray-900">
-                        <i class="ph ph-shield-check text-lg"></i>
-                        Seguridad y Contraseñas
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:bg-gray-50 hover:text-gray-900">
-                        <i class="ph ph-envelope-simple text-lg"></i>
-                        Correo y Teléfono
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:bg-gray-50 hover:text-gray-900">
-                        <i class="ph ph-map-pin text-lg"></i>
-                        Domicilio
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:bg-gray-50 hover:text-gray-900">
-                        <i class="ph ph-heartbeat text-lg"></i>
-                        Servicio Médico
-                    </a>
-                </li>
             </ul>
         </nav>
-
-        <div class="p-4 border-t border-gray-200 space-y-3">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-xs font-bold text-white">DB</div>
-                <div>
-                    <p class="text-sm font-medium text-gray-700">Daniel Beltran</p>
-                    <p class="text-xs text-gray-500">Alumno</p>
-                </div>
-            </div>
-            <a href="index.html" class="block text-sm text-red-600 hover:text-red-700 font-medium" onclick="localStorage.removeItem('proyecta_session');">Cerrar sesión</a>
-        </div>
     </aside>
 
     <!-- Contenido Principal -->
     <main class="flex-1 flex flex-col h-screen overflow-hidden">
         
-        <!-- Header Móvil / Topbar -->
-        <header class="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-6 md:px-8">
-            <div class="flex items-center md:hidden">
-                <label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú">
-                    <i class="ph ph-list text-2xl"></i>
-                </label>
-                <span class="ml-4 font-bold text-gray-700">Proyecta</span>
-            </div>
-            <div class="hidden md:block">
-                <h2 class="text-lg font-semibold text-gray-800">Perfil de Usuario</h2>
-            </div>
-            <div class="flex items-center gap-4">
-                <span class="text-xs text-gray-400">Powered by UTCH</span>
+        <!-- Header Completo -->
+        <header class="header-cuenta">
+            <div class="header-inner-cuenta">
+                <div class="logo-cuenta">
+                    <label for="menu-toggle" class="hamburger-btn-cuenta" aria-label="Abrir menú">
+                        <i class="ph ph-list"></i>
+                    </label>
+                    <span class="logo-icon-cuenta">P</span>
+                    <span class="logo-text-cuenta">PROYECTA</span>
+                </div>
+                <nav class="nav-main-cuenta">
+                    <a href="index.html">Inicio</a>
+                    <a href="cuenta.html">Cuenta</a>
+                    <a href="#">Registro Vehicular</a>
+                    <a href="#">Encuestas</a>
+                    <a href="#">Calendario</a>
+                </nav>
+                <div class="header-actions-cuenta">
+                    <button class="icon-btn-cuenta" title="Notificaciones">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="badge-cuenta">275</span>
+                    </button>
+                    <div class="user-info-cuenta">
+                        <div class="avatar-cuenta">DB</div>
+                        <span class="matricula-cuenta">6523150009</span>
+                    </div>
+                    <a href="index.html" class="btn-logout-cuenta" title="Cerrar sesión" onclick="localStorage.removeItem('proyecta_session');">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                        Salir
+                    </a>
+                    <button class="btn-calendar-cuenta" title="Calendario">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </button>
+                </div>
             </div>
         </header>
 
