@@ -3,61 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de sesión - Proyecta UTCH</title>
+  <title>Inicio de sesión - Proyecta | Universidad Tecnológica de Chihuahua</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
 </head>
-<body class="min-h-screen bg-login text-white antialiased flex flex-col items-center justify-center p-4">
-  <!-- Card de inicio de sesión -->
-  <div class="w-full max-w-md bg-slate-800 rounded-2xl shadow-2xl border border-slate-600/50 overflow-hidden">
-    <!-- Cabecera -->
-    <div class="flex items-center justify-between px-6 py-4 border-b border-slate-600/50 bg-slate-800/80">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-          <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
-          </svg>
+<body class="min-h-screen antialiased flex flex-col">
+  <!-- Barra superior institucional -->
+  <header class="bg-gradient-to-r from-emerald-700 via-emerald-600 to-emerald-500 border-b-2 border-emerald-400 shadow-lg">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 no-underline">
+        <img src="assets/logo-bis-hunters.png" alt="UTCH" class="h-10 w-auto object-contain" />
+        <div>
+          <span class="text-white font-bold text-sm block">Proyecta</span>
+          <span class="text-emerald-100 text-xs">Universidad Tecnológica de Chihuahua</span>
         </div>
-        <h1 class="text-lg font-semibold text-white">Ingresar</h1>
-      </div>
+      </a>
+      <a href="index.html" class="text-white/90 hover:text-white text-sm font-medium transition">← Volver al inicio</a>
     </div>
-    <!-- Formulario -->
-    <form class="p-6 space-y-5" id="form-login" action="cuenta.html" method="get">
-      <div>
-        <label for="usuario" class="flex items-center gap-2 text-sm font-medium text-slate-300 mb-2">
-          <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-          Usuario
-        </label>
-        <input type="text" id="usuario" name="usuario" placeholder="Tu usuario" autocomplete="username"
-          class="input-login w-full px-4 py-3 rounded-xl bg-slate-700/50 border border-slate-600 text-white placeholder-slate-500 transition">
-      </div>
-      <div>
-        <label for="password" class="flex items-center gap-2 text-sm font-medium text-slate-300 mb-2">
-          <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
-          Contraseña
-        </label>
-        <input type="password" id="password" name="password" placeholder="Tu contraseña" autocomplete="current-password"
-          class="input-login w-full px-4 py-3 rounded-xl bg-slate-700/50 border border-slate-600 text-white placeholder-slate-500 transition">
-      </div>
-      <div class="flex gap-3 pt-2">
-        <button type="submit" class="flex-1 flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-medium py-3 px-4 rounded-xl transition-colors shadow-lg shadow-emerald-900/30">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
-          Ingresar
-        </button>
-        <a href="index.html" class="flex items-center justify-center gap-2 bg-slate-600 hover:bg-slate-500 text-white font-medium py-3 px-5 rounded-xl transition-colors no-underline">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-          Cancelar
-        </a>
-      </div>
-    </form>
-  </div>
+  </header>
 
-  <p class="mt-6 text-slate-500 text-sm">
-    <a href="index.html" class="text-emerald-500 hover:text-emerald-400 transition">← Volver al inicio</a>
-  </p>
+  <!-- Contenido centrado -->
+  <main class="flex-1 flex flex-col items-center justify-center p-4 md:p-6 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
+    <div class="w-full max-w-md">
+      <!-- Card de inicio de sesión -->
+      <div class="bg-white rounded-2xl shadow-xl border-2 border-slate-300 overflow-hidden">
+        <div class="bg-gradient-to-r from-emerald-700 to-emerald-600 px-6 py-5 text-center shadow-inner">
+          <div class="w-14 h-14 mx-auto rounded-full bg-white/20 flex items-center justify-center mb-3">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+            </svg>
+          </div>
+          <h1 class="text-xl font-bold text-white">Inicio de sesión</h1>
+          <p class="text-emerald-100 text-sm mt-1">Sistema de Gestión Estudiantil</p>
+        </div>
+        <form class="p-6 space-y-5" id="form-login" action="cuenta.html" method="get">
+          <div>
+            <label for="usuario" class="block text-sm font-semibold text-slate-700 mb-2">Usuario</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Ej. matrícula o correo"
+              class="input-login w-full px-4 py-3 rounded-xl border-2 border-slate-300 bg-slate-100 text-slate-800 placeholder-slate-500 focus:border-emerald-500 focus:bg-white transition"
+              autocomplete="username">
+          </div>
+          <div>
+            <label for="password" class="block text-sm font-semibold text-slate-700 mb-2">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Tu contraseña"
+              class="input-login w-full px-4 py-3 rounded-xl border-2 border-slate-300 bg-slate-100 text-slate-800 placeholder-slate-500 focus:border-emerald-500 focus:bg-white transition"
+              autocomplete="current-password">
+          </div>
+          <div class="flex gap-3 pt-2">
+            <button type="submit" class="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-700 to-emerald-600 hover:from-emerald-600 hover:to-emerald-500 text-white font-semibold py-3.5 px-4 rounded-xl transition-all shadow-lg shadow-emerald-900/30 no-underline">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
+              Ingresar
+            </button>
+            <a href="index.html" class="flex items-center justify-center gap-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold py-3.5 px-5 rounded-xl transition-colors no-underline border-2 border-slate-300">
+              Cancelar
+            </a>
+          </div>
+        </form>
+      </div>
 
+      <p class="mt-6 text-center">
+        <a href="index.html" class="text-emerald-600 hover:text-emerald-700 font-medium text-sm no-underline">← Volver al inicio</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="py-4 border-t-2 border-slate-300 bg-slate-50">
+    <p class="text-center text-slate-600 text-xs font-medium">Proyecta · Universidad Tecnológica de Chihuahua · Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>

@@ -10,20 +10,49 @@ body.cuenta-page {
   font-family: 'Inter', sans-serif;
 }
 
-/* Variables CSS */
+/* Variables CSS - tema verde más contrastado */
 :root {
-  --utch-verde: #1a5f3d;
-  --utch-verde-claro: #2d8a5a;
-  --utch-verde-hover: #164d32;
-  --extraordinaria: #ef4444;
+  --utch-verde: #047857;
+  --utch-verde-claro: #059669;
+  --utch-verde-hover: #065f46;
+  --verde-lima: #65a30d;
+  --verde-menta: #a7f3d0;
+  --verde-menta-claro: #d1fae5;
+  --extraordinaria: #dc2626;
 }
 
 .utch-green {
-  background-color: #008744;
+  background-color: #047857;
 }
 
 .utch-green-text {
-  color: #008744;
+  color: #047857;
+}
+
+/* Animaciones sutiles - Cuenta */
+@keyframes cuenta-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.88; }
+}
+
+.cuenta-card-animate {
+  animation: cuenta-fade-in 0.45s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2.5s ease-in-out infinite;
 }
 
 /* Menú hamburguesa (solo móvil) - checkbox hack */
@@ -106,13 +135,14 @@ body.cuenta-page {
    ============================================ */
 
 .header-cuenta {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%);
   color: #fff;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(2, 70, 55, 0.4);
   position: sticky;
   top: 0;
   z-index: 100;
   width: 100%;
+  transition: box-shadow 0.3s ease;
 }
 
 .header-inner-cuenta {

@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Información del Alumno - Mi Expediente | Proyecta</title>
+  <title>Expediente del Alumno - Proyecta | Universidad Tecnológica de Chihuahua</title>
+  <meta name="description" content="Expediente y información del alumno - Proyecta UTCH">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="informacion-alumno.css">
+  <style>body{font-family:'Plus Jakarta Sans',sans-serif;}</style>
 </head>
-<body>
+<body class="antialiased min-h-screen">
   <!-- Toggle para menú hamburguesa -->
   <input type="checkbox" id="menu-toggle" class="hidden" aria-hidden="true">
   <label for="menu-toggle" class="menu-overlay" aria-label="Cerrar menú"></label>
@@ -22,8 +25,8 @@
         <i class="ph ph-x"></i>
       </label>
       <div class="sidebar-user-info">
-        <div class="sidebar-avatar">RA</div>
-        <span class="sidebar-matricula">6522150018</span>
+        <div class="sidebar-avatar">DA</div>
+        <span class="sidebar-matricula">6523150009</span>
       </div>
     </div>
     
@@ -62,8 +65,8 @@
           <span class="badge">275</span>
         </button>
         <div class="user-info">
-          <div class="avatar">RA</div>
-          <span class="matricula">6522150018</span>
+          <div class="avatar">DA</div>
+          <span class="matricula">6523150009</span>
         </div>
         <a href="index.html" class="btn-logout" title="Cerrar sesión" onclick="localStorage.removeItem('proyecta_session');">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
@@ -78,38 +81,58 @@
 
   <main class="main">
     <!-- Título y botón volver -->
-    <div class="page-head">
-      <a href="cuenta.html" class="btn-back" aria-label="Volver">
+    <div class="page-head animate-fade-in">
+      <a href="cuenta.html" class="btn-back" aria-label="Volver a Mi Cuenta">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
       </a>
-      <h1 class="page-title">Expediente</h1>
+      <div class="flex items-center gap-3 flex-wrap">
+        <div>
+          <h1 class="page-title">Expediente del alumno</h1>
+          <p class="text-sm text-slate-500 font-medium mt-0.5">Información académica y personal · Proyecta UTCH</p>
+        </div>
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-sm font-bold rounded-full shadow-lg border border-white/20">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          Activo
+        </span>
+      </div>
     </div>
 
     <!-- Tres columnas: Básica, Información Escolar, Otros Datos -->
     <section class="expediente-grid">
-      <article class="card card-basica">
+      <article class="card card-basica animate-fade-in" style="animation-delay: 0.05s">
         <div class="card-header">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           <h2>Básica</h2>
         </div>
         <div class="card-body">
           <div class="foto-perfil">
-            <div class="foto-placeholder">RA</div>
+            <div class="foto-placeholder relative">
+              <div class="foto-placeholder-text">DA</div>
+              <div class="foto-placeholder-ring"></div>
+            </div>
           </div>
           <dl class="data-list">
-            <dt>Nombre</dt>
-            <dd>ROHAN ANTONIO</dd>
-            <dt>Ape. Paterno</dt>
-            <dd>DOMINGUEZ</dd>
-            <dt>Ape. Materno</dt>
-            <dd>FLORES</dd>
-            <dt>CURP</dt>
-            <dd>DOFR040509HCHMLHA6</dd>
+            <div class="data-item-highlight">
+              <dt>Nombre</dt>
+              <dd class="font-bold text-emerald-700 text-lg">DANIEL</dd>
+            </div>
+            <div class="data-item">
+              <dt>Ape. Paterno</dt>
+              <dd>BELTRAN</dd>
+            </div>
+            <div class="data-item">
+              <dt>Ape. Materno</dt>
+              <dd>MANRIQUEZ</dd>
+            </div>
+            <div class="data-item-code">
+              <dt>CURP</dt>
+              <dd class="font-mono text-sm">BEMD030211HCHLNNA9</dd>
+            </div>
           </dl>
         </div>
       </article>
 
-      <article class="card card-escolar">
+      <article class="card card-escolar animate-fade-in" style="animation-delay: 0.1s">
         <div class="periodo-actual">
           <span>Periodo actual: 77 - Ene-Abr-26</span>
         </div>
@@ -119,41 +142,74 @@
         </div>
         <div class="card-body">
           <dl class="data-list">
-            <dt>Matrícula</dt>
-            <dd>6522150018</dd>
-            <dt>Situación</dt>
-            <dd>Regular Ingeniería</dd>
-            <dt>Periodo</dt>
-            <dd>ENERO-ABRIL 2026</dd>
-            <dt>Unidad</dt>
-            <dd>BIS</dd>
-            <dt>Carrera</dt>
-            <dd>Desarrollo y Gestión de Software</dd>
-            <dt>Grado</dt>
-            <dd>7</dd>
-            <dt>Grupo</dt>
-            <dd>IDGSBIS71N</dd>
-            <dt>Tutor</dt>
-            <dd><a href="mailto:acarrillo@utch.edu.mx">M.E.S. ANTONIO CARRILLO VENEGAS</a></dd>
-            <dt>Plan de Estudios</dt>
-            <dd>Desarrollo y Gestión de Software COMPETENCIAS (Inicia: 2021 | Origen: 2020)</dd>
-            <dt>Turno</dt>
-            <dd>NOCTURNO</dd>
+            <div class="data-item-badge">
+              <dt>Matrícula</dt>
+              <dd class="font-mono font-bold text-emerald-700 text-lg">6523150009</dd>
+            </div>
+            <div class="data-item-status">
+              <dt>Situación</dt>
+              <dd><span class="status-badge status-regular">Regular Ingeniería</span></dd>
+            </div>
+            <div class="data-item-highlight">
+              <dt>Periodo</dt>
+              <dd class="font-semibold text-emerald-700">ENERO-ABRIL 2026</dd>
+            </div>
+            <div class="data-item">
+              <dt>Unidad</dt>
+              <dd>BIS</dd>
+            </div>
+            <div class="data-item-highlight">
+              <dt>Carrera</dt>
+              <dd class="font-semibold">Desarrollo y Gestión de Software</dd>
+            </div>
+            <div class="data-item-badge">
+              <dt>Grado</dt>
+              <dd><span class="grade-badge">7</span></dd>
+            </div>
+            <div class="data-item">
+              <dt>Grupo</dt>
+              <dd class="font-mono">IDGSBIS71N</dd>
+            </div>
+            <div class="data-item-link">
+              <dt>Tutor</dt>
+              <dd><a href="mailto:acarrillo@utch.edu.mx" class="tutor-link">M.E.S. ANTONIO CARRILLO VENEGAS</a></dd>
+            </div>
+            <div class="data-item">
+              <dt>Plan de Estudios</dt>
+              <dd class="text-sm">Desarrollo y Gestión de Software COMPETENCIAS (Inicia: 2021 | Origen: 2020)</dd>
+            </div>
+            <div class="data-item">
+              <dt>Turno</dt>
+              <dd>NOCTURNO</dd>
+            </div>
           </dl>
         </div>
       </article>
 
-      <article class="card card-otros">
+      <article class="card card-otros animate-fade-in" style="animation-delay: 0.15s">
         <div class="card-header">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
           <h2>Otros Datos</h2>
         </div>
         <div class="card-body">
           <dl class="data-list">
-            <dt>Teléfono</dt>
-            <dd>Casa: 6143230186 · Celular: 6143230186</dd>
-            <dt>Domicilio</dt>
-            <dd>PASEOS DEL FALABELLA # 9226 COLONIA PASEOS DEL CAMINO REAL C.P. 31384</dd>
+            <div class="data-item-contact">
+              <dt>Teléfono</dt>
+              <dd>
+                <div class="contact-info">
+                  <span class="contact-label">Casa:</span>
+                  <span class="contact-value">6143230186</span>
+                </div>
+                <div class="contact-info">
+                  <span class="contact-label">Celular:</span>
+                  <span class="contact-value">6143230186</span>
+                </div>
+              </dd>
+            </div>
+            <div class="data-item-address">
+              <dt>Domicilio</dt>
+              <dd class="address-text">PASEOS DEL FALABELLA # 9226 COLONIA PASEOS DEL CAMINO REAL C.P. 31384</dd>
+            </div>
           </dl>
         </div>
       </article>
@@ -161,10 +217,13 @@
 
     <!-- Acciones: pestañas -->
     <section class="acciones">
-      <h2 class="acciones-title">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-        Acciones
-      </h2>
+      <div class="acciones-header-wrapper">
+        <h2 class="acciones-title">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Acciones
+        </h2>
+        <div class="acciones-badge">Información académica</div>
+      </div>
       <div class="tabs">
         <button class="tab tab-active" data-tab="calificaciones" type="button">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
@@ -199,10 +258,22 @@
           </table>
         </div>
         <div class="periodo-bar">
-          <span>Periodo: ENERO-ABRIL 2026</span>
-          <span>Grupo: IDGSBIS71N</span>
-          <span>Grado: Séptimo</span>
-          <span>Promedio: 6</span>
+          <div class="periodo-bar-item">
+            <span class="periodo-label">Periodo:</span>
+            <span class="periodo-value">ENERO-ABRIL 2026</span>
+          </div>
+          <div class="periodo-bar-item">
+            <span class="periodo-label">Grupo:</span>
+            <span class="periodo-value">IDGSBIS71N</span>
+          </div>
+          <div class="periodo-bar-item">
+            <span class="periodo-label">Grado:</span>
+            <span class="periodo-value">Séptimo</span>
+          </div>
+          <div class="periodo-bar-item promedio-highlight">
+            <span class="periodo-label">Promedio:</span>
+            <span class="periodo-value promedio-number">6</span>
+          </div>
         </div>
         <div class="table-wrap">
           <table class="tabla-materias">
