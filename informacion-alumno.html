@@ -1,432 +1,797 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>(function(){try{var t=localStorage.getItem('proyecta_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){}})();</script>
-  <link rel="stylesheet" href="theme.css">
-  <title>Expediente del Alumno - Proyecta | Universidad Tecnológica de Chihuahua</title>
-  <meta name="description" content="Expediente y información del alumno - Proyecta UTCH">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Evita parpadeo: aplica tema lo antes posible -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('proyectatheme');
+        document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+      } catch (e) { }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="theme.css" />
+  <title>Expediente del Alumno - Proyecta UTCH</title>
+  <meta name="description" content="Expediente y información del alumno - Proyecta UTCH" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <link rel="stylesheet" href="informacion-alumno.css">
-  <style>body{font-family:'Plus Jakarta Sans',sans-serif;}</style>
+
+  <link rel="stylesheet" href="informacion-alumno.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://unpkg.com/phosphor-icons/web"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
 </head>
-<body class="antialiased min-h-screen">
+
+<body
+  class="bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100 text-slate-900 min-h-screen flex overflow-hidden antialiased">
   <!-- Toggle para menú hamburguesa -->
-  <input type="checkbox" id="menu-toggle" class="hidden" aria-hidden="true">
+  <input type="checkbox" id="menu-toggle" class="hidden" aria-hidden="true" />
   <label for="menu-toggle" class="menu-overlay" aria-label="Cerrar menú"></label>
 
-  <!-- Sidebar / Navegación Lateral -->
-  <aside class="sidebar-nav w-64 bg-gradient-to-b from-white to-slate-50 border-r-2 border-slate-300 hidden md:flex flex-col flex-shrink-0 md:!flex shadow-sm">
-    <div class="p-6 flex flex-col items-center justify-center border-b-2 border-slate-200 bg-gradient-to-b from-slate-100 to-white">
-      <span class="text-xs font-semibold text-slate-600 uppercase tracking-wider">Sistema de Gestión</span>
-      <h1 class="text-2xl font-bold text-slate-800 tracking-tight mt-1">Proyecta<span class="text-emerald-600">.</span></h1>
-      <span class="text-xs text-slate-500 mt-0.5">UTCH</span>
-    </div>
-    
-    <nav class="flex-1 overflow-y-auto py-4">
-      <ul class="space-y-1 px-3">
-        <li>
-          <a href="informacion-alumno.html" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 hover:bg-emerald-50 hover:text-emerald-800 transition-colors duration-200 sidebar-link-active-custom">
-            <i class="ph ph-graduation-cap text-lg"></i>
-            Información del Alumno
+  <!-- Sidebar -->
+
+  <!-- Contenido principal -->
+  <main class="main flex-1 flex flex-col h-screen overflow-hidden bg-transparent">
+    <!-- Header -->
+    <header
+      class="header sticky top-0 z-20 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 border-b-4 border-emerald-500 shadow-xl shadow-emerald-900/30">
+      <div class="header-inner max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+        <div class="logo flex items-center gap-3">
+          <label for="menu-toggle"
+            class="hamburger-btn md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors"
+            aria-label="Abrir menú">
+            <i class="ph ph-list text-xl"></i>
+          </label>
+
+          <a href="index.html" class="flex items-center gap-2 text-white no-underline">
+            <span
+              class="logo-icon inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 border border-white/20 font-extrabold">
+              P
+            </span>
+            <span class="logo-text font-extrabold tracking-wide">PROYECTA</span>
           </a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
-
-  <!-- Cabecera -->
-  <header class="header">
-    <div class="header-inner">
-      <div class="logo">
-        <label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú">
-          <i class="ph ph-list"></i>
-        </label>
-        <span class="logo-icon">P</span>
-        <span class="logo-text">PROYECTA</span>
-      </div>
-      <nav class="nav-main">
-        <a href="index.html">Inicio</a>
-        <a href="cuenta.html">Cuenta</a>
-        <a href="#">Registro Vehicular</a>
-        <a href="#">Encuestas</a>
-        <a href="#">Calendario</a>
-      </nav>
-      <div class="header-actions">
-        <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">
-          <span class="theme-toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
-          <span class="theme-toggle-label">Oscuro</span>
-        </button>
-        <button class="icon-btn" title="Notificaciones">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-          <span class="badge">275</span>
-        </button>
-        <div class="user-info">
-          <div class="avatar">DA</div>
-          <span class="matricula">6523150009</span>
         </div>
-        <a href="index.html" class="btn-logout" title="Cerrar sesión" onclick="localStorage.removeItem('proyecta_session');">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-          Salir
-        </a>
-        <button class="btn-calendar" title="Calendario">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-        </button>
+
+        <nav class="nav-main hidden lg:flex items-center gap-5 text-sm font-semibold text-white/90">
+          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+          <a href="cuenta.html" class="hover:text-white transition-colors">Cuenta</a>
+          <a href="informacion-alumno.html" class="hover:text-white transition-colors">Información</a>
+        </nav>
+
+        <div class="header-actions flex items-center gap-2">
+          <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema"
+            title="Cambiar tema">
+            <span class="theme-toggle-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+            <span class="theme-toggle-label">Oscuro</span>
+          </button>
+
+          <button
+            class="icon-btn relative inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors"
+            title="Notificaciones">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span
+              class="badge absolute -top-1 -right-1 text-[10px] font-extrabold bg-lime-400 text-green-900 rounded-full px-1.5 py-0.5 border border-white/40">
+              275
+            </span>
+          </button>
+
+          <div
+            class="user-info hidden sm:flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-3 py-2 text-white">
+            <div
+              class="avatar w-8 h-8 rounded-full bg-lime-400 text-green-900 font-extrabold flex items-center justify-center">
+              DA
+            </div>
+            <span class="matricula text-xs font-mono">6523150009</span>
+          </div>
+
+          <a href="index.html"
+            class="btn-logout hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold transition-colors"
+            title="Cerrar sesión" onclick="localStorage.removeItem('proyectasession')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            Salir
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Scroll area -->
+    <div class="flex-1 overflow-y-auto p-4 md:p-6">
+      <div class="max-w-6xl mx-auto space-y-6">
+        <!-- Page head -->
+        <div class="page-head animate-fade-in flex items-start justify-between gap-4 flex-wrap">
+          <a href="cuenta.html"
+            class="btn-back inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold shadow-md transition-colors"
+            aria-label="Volver a Mi Cuenta">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Volver
+          </a>
+
+          <div class="flex items-center gap-3 flex-wrap">
+            <div>
+              <h1 class="page-title text-2xl md:text-3xl font-extrabold text-slate-900">Expediente del alumno</h1>
+              <p class="text-sm text-slate-500 font-medium mt-0.5">Información académica y personal · Proyecta UTCH</p>
+            </div>
+
+            <span
+              class="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-sm font-bold rounded-full shadow-lg border border-white/20">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Activo
+            </span>
+          </div>
+        </div>
+
+        <!-- 3 cards -->
+        <section class="expediente-grid grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Básica -->
+          <article
+            class="card card-basica animate-fade-in border-2 border-slate-300 bg-white rounded-2xl shadow-xl overflow-hidden"
+            style="animation-delay: 0.05s;">
+            <div
+              class="card-header bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 px-5 py-4 flex items-center gap-2 text-white">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <h2 class="font-bold text-lg">Básica</h2>
+            </div>
+
+            <div class="card-body p-5 space-y-4">
+              <div class="foto-perfil flex items-center gap-4">
+                <div
+                  class="foto-placeholder relative w-16 h-16 rounded-2xl bg-slate-100 border-2 border-slate-200 flex items-center justify-center overflow-hidden">
+                  <div
+                    class="foto-placeholder-text w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-500 text-white font-extrabold flex items-center justify-center">
+                    DA
+                  </div>
+                  <div
+                    class="foto-placeholder-ring absolute inset-0 rounded-2xl border-2 border-emerald-300 pointer-events-none">
+                  </div>
+                </div>
+
+                <div>
+                  <p class="text-xs uppercase tracking-wider text-slate-500 font-bold">Alumno</p>
+                  <p class="text-sm font-semibold text-slate-800">Daniel Beltrán Manríquez</p>
+                </div>
+              </div>
+
+              <dl class="data-list grid grid-cols-1 gap-3">
+                <div class="data-item-highlight rounded-xl border-2 border-emerald-200 bg-emerald-50/60 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-emerald-700">Nombre</dt>
+                  <dd class="font-bold text-emerald-700 text-lg">DANIEL</dd>
+                </div>
+
+                <div class="data-item rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">Ape. Paterno</dt>
+                  <dd class="font-semibold text-emerald-700">BELTRAN</dd>
+                </div>
+
+                <div class="data-item rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">Ape. Materno</dt>
+                  <dd class="font-semibold text-emerald-700">MANRIQUEZ</dd>
+                </div>
+
+                <div class="data-item-code rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">CURP</dt>
+                  <dd class="font-mono text-sm text-emerald-600 break-all">BEMD030211HCHLNNA9</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Escolar -->
+          <article
+            class="card card-escolar animate-fade-in border-2 border-slate-300 bg-white rounded-2xl shadow-xl overflow-hidden"
+            style="animation-delay: 0.1s;">
+            <div
+              class="periodo-actual px-4 py-2 text-sm font-bold text-white bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 border-b-2 border-emerald-700/40">
+              <span>Periodo actual · 7° · Ene-Abr-26</span>
+            </div>
+
+            <div
+              class="card-header bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 px-5 py-4 flex items-center gap-2 text-white">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+              <h2 class="font-bold text-lg">Información Escolar</h2>
+            </div>
+
+            <div class="card-body p-5">
+              <dl class="data-list grid grid-cols-1 gap-3">
+                <div class="data-item-badge rounded-xl border-2 border-emerald-200 bg-emerald-50/60 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-emerald-700">Matrícula</dt>
+                  <dd class="font-mono font-bold text-emerald-700 text-lg">6523150009</dd>
+                </div>
+
+                <div class="data-item-status rounded-xl border-2 border-emerald-200 bg-emerald-50/60 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-emerald-700">Situación</dt>
+                  <dd>
+                    <span
+                      class="status-badge inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold border">
+                      Regular Ingeniería
+                    </span>
+                  </dd>
+                </div>
+
+                <div class="data-item-highlight rounded-xl border-2 border-emerald-200 bg-emerald-50/60 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-emerald-700">Periodo</dt>
+                  <dd class="font-semibold text-emerald-700">ENERO-ABRIL 2026</dd>
+                </div>
+
+                <div class="data-item rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">Unidad</dt>
+                  <dd>BIS</dd>
+                </div>
+
+                <div class="data-item-highlight rounded-xl border-2 border-emerald-200 bg-emerald-50/60 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-emerald-700">Carrera</dt>
+                  <dd class="font-semibold">Desarrollo y Gestión de Software</dd>
+                </div>
+
+                <div class="data-item-badge rounded-xl border-2 border-emerald-200 bg-emerald-50/60 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-emerald-700">Grado</dt>
+                  <dd><span
+                      class="grade-badge inline-flex items-center justify-center w-10 h-10 rounded-2xl font-extrabold border">7</span>
+                  </dd>
+                </div>
+
+                <div class="data-item rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">Grupo</dt>
+                  <dd class="font-mono text-emerald-600">IDGSBIS71N</dd>
+                </div>
+
+                <div class="data-item-link rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">Tutor</dt>
+                  <dd>
+                    <a href="mailto:acarrillo@utch.edu.mx"
+                      class="tutor-link text-emerald-700 font-semibold hover:underline">
+                      M.E.S. ANTONIO CARRILLO VENEGAS
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="data-item rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">Plan de Estudios</dt>
+                  <dd class="text-sm">Desarrollo y Gestión de Software · COMPETENCIAS · Inicia 2021 · Origen 2020</dd>
+                </div>
+
+                <div class="data-item rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">Turno</dt>
+                  <dd>NOCTURNO</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Otros -->
+          <article
+            class="card card-otros animate-fade-in border-2 border-slate-300 bg-white rounded-2xl shadow-xl overflow-hidden"
+            style="animation-delay: 0.15s;">
+            <div
+              class="card-header bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 px-5 py-4 flex items-center gap-2 text-white">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                </path>
+              </svg>
+              <h2 class="font-bold text-lg">Otros Datos</h2>
+            </div>
+
+            <div class="card-body p-5">
+              <dl class="data-list grid grid-cols-1 gap-3">
+                <div class="data-item-contact rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">Teléfono</dt>
+                  <dd class="mt-1 space-y-1">
+                    <div class="contact-info flex items-center justify-between">
+                      <span class="contact-label text-xs font-bold text-slate-500">Casa</span>
+                      <span class="contact-value font-semibold">6143230186</span>
+                    </div>
+                    <div class="contact-info flex items-center justify-between">
+                      <span class="contact-label text-xs font-bold text-slate-500">Celular</span>
+                      <span class="contact-value font-semibold">6143230186</span>
+                    </div>
+                  </dd>
+                </div>
+
+                <div class="data-item-address rounded-xl border-2 border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-xs font-bold uppercase tracking-wider text-slate-600">Domicilio</dt>
+                  <dd class="address-text mt-1 text-sm text-slate-700 font-medium border-l-4 border-slate-300 pl-3">
+                    PASEOS DEL FALABELLA 9226 · COL. PASEOS DEL CAMINO REAL · C.P. 31384
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+        </section>
+
+        <!-- Acciones / Tabs -->
+        <section class="acciones border-2 border-slate-300 bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div
+            class="acciones-header-wrapper px-5 py-4 flex items-center justify-between gap-4 flex-wrap border-b-2 border-slate-200 bg-gradient-to-r from-slate-100 to-gray-100">
+            <h2 class="acciones-title text-lg font-extrabold text-slate-800 flex items-center gap-2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Acciones
+            </h2>
+            <div
+              class="acciones-badge text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
+              Información académica
+            </div>
+
+            <div class="tabs flex items-center gap-2 flex-wrap">
+              <button
+                class="tab tab-active inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-emerald-300 bg-emerald-50 text-emerald-900 font-bold text-sm hover:bg-emerald-100 transition-colors"
+                data-tab="calificaciones" type="button">
+                <i class="ph ph-notebook text-lg"></i> Calificaciones
+              </button>
+
+              <button
+                class="tab inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-slate-300 bg-white text-slate-700 font-bold text-sm hover:bg-slate-50 transition-colors"
+                data-tab="asistencias" type="button">
+                <i class="ph ph-check-circle text-lg"></i> Asistencias
+              </button>
+
+              <button
+                class="tab inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-slate-300 bg-white text-slate-700 font-bold text-sm hover:bg-slate-50 transition-colors"
+                data-tab="estadias" type="button">
+                <i class="ph ph-briefcase text-lg"></i> Informe de Estadías
+              </button>
+
+              <button
+                class="tab inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-slate-300 bg-white text-slate-700 font-bold text-sm hover:bg-slate-50 transition-colors"
+                data-tab="boletas" type="button">
+                <i class="ph ph-file-text text-lg"></i> Boletas
+              </button>
+            </div>
+          </div>
+
+          <!-- Panel Calificaciones -->
+          <div id="panel-calificaciones" class="tab-panel tab-panel-active p-5 space-y-4">
+            <div
+              class="tab-content-header tab-header-calificaciones rounded-xl bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white px-4 py-3 flex items-center gap-2">
+              <i class="ph ph-notebook text-xl"></i>
+              <span class="font-extrabold">Calificaciones</span>
+            </div>
+
+            <p class="leyenda-aviso text-sm text-red-700 bg-red-50 border-l-4 border-red-500 px-3 py-2 rounded-lg">
+              Colores en calificaciones: la tabla de colores aplica a periodos posteriores a May-Ago-12.
+            </p>
+
+            <div class="leyenda-colores rounded-xl border-2 border-slate-200 bg-white p-4">
+              <table class="leyenda-table w-full text-sm border-collapse">
+                <thead>
+                  <tr class="bg-slate-100">
+                    <th class="text-left px-3 py-2 border border-slate-200">Color</th>
+                    <th class="text-left px-3 py-2 border border-slate-200">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-3 py-2 border border-slate-200">
+                      <span class="color-box color-ordinario inline-block w-4 h-4 rounded bg-emerald-500"></span>
+                    </td>
+                    <td class="px-3 py-2 border border-slate-200">Ordinario</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border border-slate-200">
+                      <span class="color-box color-recuperacion inline-block w-4 h-4 rounded bg-amber-400"></span>
+                    </td>
+                    <td class="px-3 py-2 border border-slate-200">Recuperación</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border border-slate-200">
+                      <span class="color-box color-extraordinaria inline-block w-4 h-4 rounded bg-red-500"></span>
+                    </td>
+                    <td class="px-3 py-2 border border-slate-200">Evaluación extraordinaria</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              class="periodo-bar rounded-xl border-2 border-emerald-200 bg-emerald-50 px-4 py-3 flex flex-wrap gap-4 items-center justify-between">
+              <div class="periodo-bar-item">
+                <span class="periodo-label text-xs font-bold uppercase tracking-wider text-emerald-700">Periodo</span>
+                <span class="periodo-value block font-extrabold text-emerald-900">ENERO-ABRIL 2026</span>
+              </div>
+              <div class="periodo-bar-item">
+                <span class="periodo-label text-xs font-bold uppercase tracking-wider text-emerald-700">Grupo</span>
+                <span class="periodo-value block font-extrabold text-emerald-900">IDGSBIS71N</span>
+              </div>
+              <div class="periodo-bar-item">
+                <span class="periodo-label text-xs font-bold uppercase tracking-wider text-emerald-700">Grado</span>
+                <span class="periodo-value block font-extrabold text-emerald-900">Séptimo</span>
+              </div>
+              <div class="periodo-bar-item promedio-highlight">
+                <span class="periodo-label text-xs font-bold uppercase tracking-wider text-emerald-700">Promedio</span>
+                <span class="periodo-value promedio-number block font-extrabold text-emerald-900 text-2xl">6</span>
+              </div>
+            </div>
+
+            <div class="table-wrap overflow-x-auto rounded-xl border-2 border-slate-300 bg-white shadow-sm">
+              <table class="tabla-materias w-full text-sm border-collapse">
+                <thead>
+                  <tr class="bg-slate-100">
+                    <th class="text-left px-3 py-2 border border-slate-200">Materia</th>
+                    <th class="text-left px-3 py-2 border border-slate-200">Profesor</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">U1</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">U2</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">U3</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">U4</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">Promedio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200 font-semibold">MATEMÁTICAS PARA INGENIERÍA I</td>
+                    <td class="px-3 py-2 border border-slate-200">DR. IVÁN JALIL ANTÓN CARREÑO MÁRQUEZ</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200 font-semibold">METODOLOGÍAS PARA EL DESARROLLO DE
+                      PROYECTOS</td>
+                    <td class="px-3 py-2 border border-slate-200">ING. MARTÍN DANIEL MELÉNDEZ DOMÍNGUEZ</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200 font-semibold">ARQUITECTURAS DE SOFTWARE</td>
+                    <td class="px-3 py-2 border border-slate-200">ING. ROBERTO AGUIRRE RODRÍGUEZ</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200 font-semibold">EXPERIENCIA DE USUARIO</td>
+                    <td class="px-3 py-2 border border-slate-200">ING. MIGUEL ANGEL GUTIERREZ BACA</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200 font-semibold">SEGURIDAD INFORMÁTICA</td>
+                    <td class="px-3 py-2 border border-slate-200">ING. MIGUEL ANGEL GUTIERREZ BACA</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200 font-semibold">INGLÉS VI</td>
+                    <td class="px-3 py-2 border border-slate-200">M.E.S. ANTONIO CARRILLO VENEGAS</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">X</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                    <td class="px-3 py-2 border border-slate-200 text-center"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="historial-periodos rounded-2xl border-2 border-slate-300 bg-white shadow-sm p-4">
+              <h3 class="font-extrabold text-slate-800 mb-3">Historial por periodo</h3>
+              <ul class="lista-periodos space-y-2 text-sm">
+                <li
+                  class="flex flex-wrap gap-2 items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50">
+                  <span class="p-periodo font-semibold">Periodo SEPTIEMBRE-DICIEMBRE 2025</span>
+                  <span class="p-grupo text-slate-600">Grupo TIDBIS62M</span>
+                  <span class="p-grado text-slate-600">Grado Sexto</span>
+                </li>
+                <li
+                  class="flex flex-wrap gap-2 items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50">
+                  <span class="p-periodo font-semibold">Periodo MAYO-AGOSTO 2025</span>
+                  <span class="p-grupo text-slate-600">Grupo TIDBIS52M</span>
+                  <span class="p-grado text-slate-600">Grado Quinto</span>
+                  <span class="p-promedio font-extrabold text-emerald-700">Promedio 9</span>
+                </li>
+                <li
+                  class="flex flex-wrap gap-2 items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50">
+                  <span class="p-periodo font-semibold">Periodo ENERO-ABRIL 2025</span>
+                  <span class="p-grupo text-slate-600">Grupo TIDBIS42M</span>
+                  <span class="p-grado text-slate-600">Grado Cuarto</span>
+                  <span class="p-promedio font-extrabold text-emerald-700">Promedio 9</span>
+                </li>
+                <li
+                  class="flex flex-wrap gap-2 items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50">
+                  <span class="p-periodo font-semibold">Periodo SEPTIEMBRE-DICIEMBRE 2022</span>
+                  <span class="p-grupo text-slate-600">Grupo TIDBIS01M</span>
+                  <span class="p-grado text-slate-600">Grado Programa propedéutico</span>
+                  <span class="p-promedio font-extrabold text-emerald-700">Promedio 10</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel Asistencias -->
+          <div id="panel-asistencias" class="tab-panel p-5 space-y-4">
+            <div
+              class="tab-content-header rounded-xl bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white px-4 py-3 flex items-center gap-2">
+              <i class="ph ph-check-circle text-xl"></i>
+              <span class="font-extrabold">Asistencias</span>
+            </div>
+
+            <div class="leyenda-colores rounded-xl border-2 border-slate-200 bg-white p-4">
+              <table class="leyenda-table w-full text-sm border-collapse">
+                <thead>
+                  <tr class="bg-slate-100">
+                    <th class="text-left px-3 py-2 border border-slate-200">Color</th>
+                    <th class="text-left px-3 py-2 border border-slate-200">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-3 py-2 border border-slate-200"><span
+                        class="inline-block w-4 h-4 rounded bg-emerald-500"></span></td>
+                    <td class="px-3 py-2 border border-slate-200">Faltas menores a 10</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border border-slate-200"><span
+                        class="inline-block w-4 h-4 rounded bg-amber-400"></span></td>
+                    <td class="px-3 py-2 border border-slate-200">Faltas ≥ 10 y ≤ 20</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border border-slate-200"><span
+                        class="inline-block w-4 h-4 rounded bg-red-500"></span></td>
+                    <td class="px-3 py-2 border border-slate-200">Faltas superiores a 20</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p
+              class="leyenda-aviso leyenda-retardos text-sm text-amber-800 bg-amber-50 border-l-4 border-amber-500 px-3 py-2 rounded-lg">
+              Cada 3 retardos sumarán una falta en la materia.
+            </p>
+
+            <h3 class="tabla-asistencias-titulo text-lg font-extrabold text-slate-800">Asistencias del periodo
+              ENERO-ABRIL 2026</h3>
+
+            <div class="table-wrap overflow-x-auto rounded-xl border-2 border-slate-300 bg-white shadow-sm">
+              <table class="tabla-asistencias w-full text-sm border-collapse">
+                <thead>
+                  <tr class="bg-slate-100">
+                    <th class="text-left px-3 py-2 border border-slate-200">Materia</th>
+                    <th class="text-left px-3 py-2 border border-slate-200">Profesor</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">Faltas para reprobar</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">Asistencias</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">Faltas</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">Retardo</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">Total faltas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200 font-semibold">MATEMÁTICAS PARA INGENIERÍA I</td>
+                    <td class="px-3 py-2 border border-slate-200">DR. IVÁN JALIL ANTÓN CARREÑO MÁRQUEZ</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">11</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">9</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">0</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">3</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center celda-verde">1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Panel Estadías -->
+          <div id="panel-estadias" class="tab-panel p-5 space-y-4">
+            <div
+              class="tab-content-header tab-header-estadias rounded-xl bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white px-4 py-3 flex items-center gap-2">
+              <i class="ph ph-briefcase text-xl"></i>
+              <span class="font-extrabold">Calificación de Informe de Estadías</span>
+            </div>
+
+            <div class="table-wrap overflow-x-auto rounded-xl border-2 border-slate-300 bg-white shadow-sm">
+              <table class="tabla-estadias w-full text-sm border-collapse">
+                <thead>
+                  <tr class="bg-slate-100">
+                    <th class="text-left px-3 py-2 border border-slate-200">Evaluación</th>
+                    <th class="text-left px-3 py-2 border border-slate-200">Criterio</th>
+                    <th class="text-left px-3 py-2 border border-slate-200">Descripción</th>
+                    <th class="text-left px-3 py-2 border border-slate-200">Observación</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">Calificación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="fila-sin-datos">
+                    <td class="px-3 py-6 border border-slate-200 text-center text-slate-500" colspan="5">
+                      No tienes ningún criterio con oportunidad de mejora
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Panel Boletas -->
+          <div id="panel-boletas" class="tab-panel p-5 space-y-4">
+            <div
+              class="tab-content-header tab-header-boletas rounded-xl bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white px-4 py-3 flex items-center gap-2">
+              <i class="ph ph-file-text text-xl"></i>
+              <span class="font-extrabold">Boletas</span>
+            </div>
+
+            <div class="table-wrap overflow-x-auto rounded-xl border-2 border-slate-300 bg-white shadow-sm">
+              <table class="tabla-boletas w-full text-sm border-collapse">
+                <thead>
+                  <tr class="bg-slate-100">
+                    <th class="text-left px-3 py-2 border border-slate-200">Periodo - Grupo</th>
+                    <th class="text-center px-3 py-2 border border-slate-200">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200">Ene-Abr-26 - IDGSBIS71N</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">
+                      <button type="button"
+                        class="btn-descargar inline-flex items-center justify-center px-4 py-2 rounded-xl border-2 border-slate-300 bg-white hover:bg-slate-50 font-bold text-sm">
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200">Sept-Dic-25 - TIDBIS62M</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">
+                      <button type="button"
+                        class="btn-descargar inline-flex items-center justify-center px-4 py-2 rounded-xl border-2 border-slate-300 bg-white hover:bg-slate-50 font-bold text-sm">
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200">May-Ago-25 - TIDBIS52M</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">
+                      <button type="button"
+                        class="btn-descargar inline-flex items-center justify-center px-4 py-2 rounded-xl border-2 border-slate-300 bg-white hover:bg-slate-50 font-bold text-sm">
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200">Ene-Abr-25 - TIDBIS42M</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">
+                      <button type="button"
+                        class="btn-descargar inline-flex items-center justify-center px-4 py-2 rounded-xl border-2 border-slate-300 bg-white hover:bg-slate-50 font-bold text-sm">
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200">Sept-Dic-24 - TIDBIS32M</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">
+                      <button type="button"
+                        class="btn-descargar inline-flex items-center justify-center px-4 py-2 rounded-xl border-2 border-slate-300 bg-white hover:bg-slate-50 font-bold text-sm">
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200">May-Ago-24 - TIDBIS22M</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">
+                      <button type="button"
+                        class="btn-descargar inline-flex items-center justify-center px-4 py-2 rounded-xl border-2 border-slate-300 bg-white hover:bg-slate-50 font-bold text-sm">
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200">Ene-Abr-23 - TIDBIS11M</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">
+                      <button type="button"
+                        class="btn-descargar inline-flex items-center justify-center px-4 py-2 rounded-xl border-2 border-slate-300 bg-white hover:bg-slate-50 font-bold text-sm">
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-3 py-2 border border-slate-200">Sept-Dic-22 - TIDBIS01M</td>
+                    <td class="px-3 py-2 border border-slate-200 text-center">
+                      <button type="button"
+                        class="btn-descargar inline-flex items-center justify-center px-4 py-2 rounded-xl border-2 border-slate-300 bg-white hover:bg-slate-50 font-bold text-sm">
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
       </div>
     </div>
-  </header>
-
-  <main class="main">
-    <!-- Título y botón volver -->
-    <div class="page-head animate-fade-in">
-      <a href="cuenta.html" class="btn-back" aria-label="Volver a Mi Cuenta">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </a>
-      <div class="flex items-center gap-3 flex-wrap">
-        <div>
-          <h1 class="page-title">Expediente del alumno</h1>
-          <p class="text-sm text-slate-500 font-medium mt-0.5">Información académica y personal · Proyecta UTCH</p>
-        </div>
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-sm font-bold rounded-full shadow-lg border border-white/20">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          Activo
-        </span>
-      </div>
-    </div>
-
-    <!-- Tres columnas: Básica, Información Escolar, Otros Datos -->
-    <section class="expediente-grid">
-      <article class="card card-basica animate-fade-in" style="animation-delay: 0.05s">
-        <div class="card-header">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          <h2>Básica</h2>
-        </div>
-        <div class="card-body">
-          <div class="foto-perfil">
-            <div class="foto-placeholder relative">
-              <div class="foto-placeholder-text">DA</div>
-              <div class="foto-placeholder-ring"></div>
-            </div>
-          </div>
-          <dl class="data-list">
-            <div class="data-item-highlight">
-              <dt>Nombre</dt>
-              <dd class="font-bold text-emerald-700 text-lg">DANIEL</dd>
-            </div>
-            <div class="data-item">
-              <dt>Ape. Paterno</dt>
-              <dd>BELTRAN</dd>
-            </div>
-            <div class="data-item">
-              <dt>Ape. Materno</dt>
-              <dd>MANRIQUEZ</dd>
-            </div>
-            <div class="data-item-code">
-              <dt>CURP</dt>
-              <dd class="font-mono text-sm">BEMD030211HCHLNNA9</dd>
-            </div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="card card-escolar animate-fade-in" style="animation-delay: 0.1s">
-        <div class="periodo-actual">
-          <span>Periodo actual: 77 - Ene-Abr-26</span>
-        </div>
-        <div class="card-header">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-          <h2>Información Escolar</h2>
-        </div>
-        <div class="card-body">
-          <dl class="data-list">
-            <div class="data-item-badge">
-              <dt>Matrícula</dt>
-              <dd class="font-mono font-bold text-emerald-700 text-lg">6523150009</dd>
-            </div>
-            <div class="data-item-status">
-              <dt>Situación</dt>
-              <dd><span class="status-badge status-regular">Regular Ingeniería</span></dd>
-            </div>
-            <div class="data-item-highlight">
-              <dt>Periodo</dt>
-              <dd class="font-semibold text-emerald-700">ENERO-ABRIL 2026</dd>
-            </div>
-            <div class="data-item">
-              <dt>Unidad</dt>
-              <dd>BIS</dd>
-            </div>
-            <div class="data-item-highlight">
-              <dt>Carrera</dt>
-              <dd class="font-semibold">Desarrollo y Gestión de Software</dd>
-            </div>
-            <div class="data-item-badge">
-              <dt>Grado</dt>
-              <dd><span class="grade-badge">7</span></dd>
-            </div>
-            <div class="data-item">
-              <dt>Grupo</dt>
-              <dd class="font-mono">IDGSBIS71N</dd>
-            </div>
-            <div class="data-item-link">
-              <dt>Tutor</dt>
-              <dd><a href="mailto:acarrillo@utch.edu.mx" class="tutor-link">M.E.S. ANTONIO CARRILLO VENEGAS</a></dd>
-            </div>
-            <div class="data-item">
-              <dt>Plan de Estudios</dt>
-              <dd class="text-sm">Desarrollo y Gestión de Software COMPETENCIAS (Inicia: 2021 | Origen: 2020)</dd>
-            </div>
-            <div class="data-item">
-              <dt>Turno</dt>
-              <dd>NOCTURNO</dd>
-            </div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="card card-otros animate-fade-in" style="animation-delay: 0.15s">
-        <div class="card-header">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-          <h2>Otros Datos</h2>
-        </div>
-        <div class="card-body">
-          <dl class="data-list">
-            <div class="data-item-contact">
-              <dt>Teléfono</dt>
-              <dd>
-                <div class="contact-info">
-                  <span class="contact-label">Casa:</span>
-                  <span class="contact-value">6143230186</span>
-                </div>
-                <div class="contact-info">
-                  <span class="contact-label">Celular:</span>
-                  <span class="contact-value">6143230186</span>
-                </div>
-              </dd>
-            </div>
-            <div class="data-item-address">
-              <dt>Domicilio</dt>
-              <dd class="address-text">PASEOS DEL FALABELLA # 9226 COLONIA PASEOS DEL CAMINO REAL C.P. 31384</dd>
-            </div>
-          </dl>
-        </div>
-      </article>
-    </section>
-
-    <!-- Acciones: pestañas -->
-    <section class="acciones">
-      <div class="acciones-header-wrapper">
-        <h2 class="acciones-title">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-          Acciones
-        </h2>
-        <div class="acciones-badge">Información académica</div>
-      </div>
-      <div class="tabs">
-        <button class="tab tab-active" data-tab="calificaciones" type="button">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          Calificaciones
-        </button>
-        <button class="tab" data-tab="asistencias" type="button">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          Asistencias
-        </button>
-        <button class="tab" data-tab="estadias" type="button">Calificación de Informe de Estadías</button>
-        <button class="tab" data-tab="boletas" type="button">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          Boletas
-        </button>
-      </div>
-
-      <!-- Panel Calificaciones -->
-      <div id="panel-calificaciones" class="tab-panel tab-panel-active">
-        <div class="tab-content-header tab-header-calificaciones">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-          <span>Calificaciones</span>
-        </div>
-        <p class="leyenda-aviso">Colores en calificaciones (La tabla de colores aplica a periodos posteriores a May-Ago-12)</p>
-        <div class="leyenda-colores">
-          <table class="leyenda-table">
-            <thead><tr><th>Color</th><th>Descripción</th></tr></thead>
-            <tbody>
-              <tr><td><span class="color-box color-ordinario"></span></td><td>Ordinario</td></tr>
-              <tr><td><span class="color-box color-recuperacion"></span></td><td>Recuperación</td></tr>
-              <tr><td><span class="color-box color-extraordinaria"></span></td><td>Evaluación Extraordinaria</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="periodo-bar">
-          <div class="periodo-bar-item">
-            <span class="periodo-label">Periodo:</span>
-            <span class="periodo-value">ENERO-ABRIL 2026</span>
-          </div>
-          <div class="periodo-bar-item">
-            <span class="periodo-label">Grupo:</span>
-            <span class="periodo-value">IDGSBIS71N</span>
-          </div>
-          <div class="periodo-bar-item">
-            <span class="periodo-label">Grado:</span>
-            <span class="periodo-value">Séptimo</span>
-          </div>
-          <div class="periodo-bar-item promedio-highlight">
-            <span class="periodo-label">Promedio:</span>
-            <span class="periodo-value promedio-number">6</span>
-          </div>
-        </div>
-        <div class="table-wrap">
-          <table class="tabla-materias">
-            <thead>
-              <tr><th>Materia</th><th>Profesor</th><th>U1</th><th>U2</th><th>U3</th><th>U4</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>MATEMÁTICAS PARA INGENIERÍA I</td><td>DR. IVÁN JALIL ANTÓN CARREÑO MÁRQUEZ</td><td>X</td><td>X</td><td>X</td><td>X</td><td>—</td></tr>
-              <tr><td>METODOLOGÍAS PARA EL DESARROLLO DE PROYECTOS</td><td>ING. MARTÍN DANIEL MELÉNDEZ DOMÍNGUEZ</td><td>X</td><td>X</td><td>X</td><td>—</td><td>—</td></tr>
-              <tr><td>ARQUITECTURAS DE SOFTWARE</td><td>ING. ROBERTO AGUIRRE RODRÍGUEZ</td><td>X</td><td>X</td><td>X</td><td>—</td><td>—</td></tr>
-              <tr><td>EXPERIENCIA DE USUARIO</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>X</td><td>X</td><td>X</td><td>—</td><td>—</td></tr>
-              <tr><td>SEGURIDAD INFORMÁTICA</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>X</td><td>X</td><td>X</td><td>—</td><td>—</td></tr>
-              <tr><td>INGLÉS VI</td><td>M.E.S. ANTONIO CARRILLO VENEGAS</td><td>X</td><td>X</td><td>—</td><td>—</td><td>—</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="historial-periodos">
-          <h3>Historial por periodo</h3>
-          <ul class="lista-periodos">
-            <li><span class="p-periodo">Periodo: SEPTIEMBRE-DICIEMBRE 2025</span> <span class="p-grupo">Grupo: TIDBIS62M</span> <span class="p-grado">Grado: Sexto</span></li>
-            <li><span class="p-periodo">Periodo: MAYO-AGOSTO 2025</span> <span class="p-grupo">Grupo: TIDBIS52M</span> <span class="p-grado">Grado: Quinto</span> <span class="p-promedio">Promedio: 9</span></li>
-            <li><span class="p-periodo">Periodo: ENERO-ABRIL 2025</span> <span class="p-grupo">Grupo: TIDBIS42M</span> <span class="p-grado">Grado: Cuarto</span> <span class="p-promedio">Promedio: 9</span></li>
-            <li><span class="p-periodo">Periodo: SEPTIEMBRE-DICIEMBRE 2022</span> <span class="p-grupo">Grupo: TIDBIS01M</span> <span class="p-grado">Grado: Programa propedéutico</span> <span class="p-promedio">Promedio: 10</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Panel Asistencias -->
-      <div id="panel-asistencias" class="tab-panel">
-        <div class="tab-content-header">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          <span>Asistencias</span>
-        </div>
-        <div class="leyenda-colores">
-          <table class="leyenda-table">
-            <thead><tr><th>Color</th><th>Descripción</th></tr></thead>
-            <tbody>
-              <tr><td><span class="color-box color-ordinario"></span></td><td>Faltas menores a 10%</td></tr>
-              <tr><td><span class="color-box color-recuperacion"></span></td><td>Faltas igual o superiores a 10% y menores o igual a 20%</td></tr>
-              <tr><td><span class="color-box color-extraordinaria"></span></td><td>Faltas superiores a 20%</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="leyenda-aviso leyenda-retardos">*Cada 3 retardos sumarán una falta en la materia.</p>
-        <h3 class="tabla-asistencias-titulo">Asistencias del periodo ENERO-ABRIL 2026</h3>
-        <div class="table-wrap">
-          <table class="tabla-asistencias">
-            <thead>
-              <tr>
-                <th>Materia</th>
-                <th>Profesor</th>
-                <th># Faltas para Reprobar</th>
-                <th>Asistencias</th>
-                <th>Faltas</th>
-                <th>Retardo</th>
-                <th>Total Faltas</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>MATEMÁTICAS PARA INGENIERÍA I</td><td>DR. IVÁN JALIL ANTÓN CARREÑO MÁRQUEZ</td><td>11</td><td>9</td><td>0</td><td>3</td><td class="celda-verde">1</td></tr>
-              <tr><td>METODOLOGÍAS PARA EL DESARROLLO DE PROYECTOS</td><td>ING. MARTÍN DANIEL MELÉNDEZ DOMÍNGUEZ</td><td>8</td><td>8</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
-              <tr><td>ARQUITECTURAS DE SOFTWARE</td><td>ING. ROBERTO AGUIRRE RODRÍGUEZ</td><td>14</td><td>20</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
-              <tr><td>EXPERIENCIA DE USUARIO</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>8</td><td>7</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
-              <tr><td>SEGURIDAD INFORMÁTICA</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>8</td><td>5</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
-              <tr><td>INGLÉS VI</td><td>M.E.S. ANTONIO CARRILLO VENEGAS</td><td>14</td><td>9</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
-              <tr><td>ADMINISTRACIÓN DEL TIEMPO</td><td>ING MIGUEL ANGEL GUTIERREZ BACA</td><td>8</td><td>2</td><td>0</td><td>0</td><td class="celda-verde">0</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Panel Calificación de Informe de Estadías -->
-      <div id="panel-estadias" class="tab-panel">
-        <div class="tab-content-header tab-header-estadias">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>Calificación de Informe de Estadías</span>
-        </div>
-        <div class="table-wrap">
-          <table class="tabla-estadias">
-            <thead>
-              <tr>
-                <th>Evaluación</th>
-                <th>Criterio</th>
-                <th>Descripción</th>
-                <th>Observación</th>
-                <th>Calificación</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="fila-sin-datos">
-                <td colspan="5">No tienes ningún criterio con oportunidad de mejora</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Panel Boletas -->
-      <div id="panel-boletas" class="tab-panel">
-        <div class="tab-content-header tab-header-boletas">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          <span>Boletas</span>
-        </div>
-        <div class="table-wrap">
-          <table class="tabla-boletas">
-            <thead>
-              <tr><th>Periodo - Grupo</th><th>Acciones</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Ene-Abr-26 - IDGSBIS71N</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
-              <tr><td>Sept-Dic-25 - TIDBIS62M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
-              <tr><td>May-Ago-25 - TIDBIS52M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
-              <tr><td>Ene-Abr-25 - TIDBIS42M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
-              <tr><td>Sept-Dic-24 - TIDBIS32M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
-              <tr><td>May-Ago-24 - TIDBIS22M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
-              <tr><td>Ene-Abr-23 - TIDBIS11M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
-              <tr><td>Sept-Dic-22 - TIDBIS01M</td><td><button type="button" class="btn-descargar">Descargar</button></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
   </main>
 
+  <!-- Tabs JS (igual al original) -->
   <script>
-    (function() {
-      var tabs = document.querySelectorAll('.tab');
-      var panels = document.querySelectorAll('.tab-panel');
-      tabs.forEach(function(tab) {
-        tab.addEventListener('click', function() {
-          var targetId = 'panel-' + this.getAttribute('data-tab');
-          tabs.forEach(function(t) { t.classList.remove('tab-active'); });
-          panels.forEach(function(p) {
-            p.classList.remove('tab-panel-active');
-            if (p.id === targetId) p.classList.add('tab-panel-active');
-          });
-          this.classList.add('tab-active');
-          if (history.replaceState) history.replaceState(null, '', '#' + this.getAttribute('data-tab'));
-        });
+    var tabs = document.querySelectorAll('.tab');
+    var panels = document.querySelectorAll('.tab-panel');
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var targetId = 'panel-' + this.getAttribute('data-tab');
+
+        tabs.forEach(function (t) { t.classList.remove('tab-active'); });
+        panels.forEach(function (p) { p.classList.remove('tab-panel-active'); });
+
+        var target = document.getElementById(targetId);
+        if (target) target.classList.add('tab-panel-active');
+        this.classList.add('tab-active');
+
+        if (history.replaceState) history.replaceState(null, '', '#' + this.getAttribute('data-tab'));
       });
-      var hash = location.hash.replace('#', '');
-      if (hash && document.getElementById('panel-' + hash)) {
-        tabs.forEach(function(t) {
+    });
+
+    var hash = location.hash.replace('#', '');
+    if (hash) {
+      var initPanel = document.getElementById('panel-' + hash);
+      if (initPanel) {
+        tabs.forEach(function (t) {
           t.classList.toggle('tab-active', t.getAttribute('data-tab') === hash);
         });
-        panels.forEach(function(p) {
+        panels.forEach(function (p) {
           p.classList.toggle('tab-panel-active', p.id === 'panel-' + hash);
         });
       }
-    })();
+    }
   </script>
+
   <script src="theme.js"></script>
 </body>
+
 </html>

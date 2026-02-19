@@ -12,6 +12,13 @@
   --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.4);
   --sombra-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+  /* Table Dark Variables */
+  --table-border: #334155;
+  --table-row-even: #1e293b;
+  --table-row-odd: #0f172a;
+  --table-hover: #475569;
+  --table-head-bg: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%);
 }
 
 /* --- Cuerpo y fondos generales --- */
@@ -36,13 +43,33 @@
 }
 
 /* Textos Index / Login */
-[data-theme="dark"] .text-slate-900 { color: #e2e8f0 !important; }
-[data-theme="dark"] .text-slate-800 { color: #cbd5e1 !important; }
-[data-theme="dark"] .text-slate-700 { color: #94a3b8 !important; }
-[data-theme="dark"] .text-slate-600 { color: #94a3b8 !important; }
-[data-theme="dark"] .text-slate-500 { color: #64748b !important; }
-[data-theme="dark"] .text-emerald-700 { color: #6ee7b7 !important; }
-[data-theme="dark"] .text-emerald-900 { color: #a7f3d0 !important; }
+[data-theme="dark"] .text-slate-900 {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .text-slate-800 {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .text-slate-700 {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .text-slate-500 {
+  color: #64748b !important;
+}
+
+[data-theme="dark"] .text-emerald-700 {
+  color: #6ee7b7 !important;
+}
+
+[data-theme="dark"] .text-emerald-900 {
+  color: #a7f3d0 !important;
+}
 
 /* Cards y contenedores blancos / claros */
 [data-theme="dark"] .bg-white {
@@ -50,17 +77,45 @@
   border-color: #334155 !important;
 }
 
-[data-theme="dark"] .bg-slate-50 { background-color: #1e293b !important; }
-[data-theme="dark"] .bg-slate-100 { background-color: #334155 !important; }
-[data-theme="dark"] .bg-slate-200 { background-color: #475569 !important; }
-[data-theme="dark"] .bg-gray-50 { background-color: #1e293b !important; }
-[data-theme="dark"] .via-slate-50 { background-color: #1e293b !important; }
+[data-theme="dark"] .bg-slate-50 {
+  background-color: #1e293b !important;
+}
 
-[data-theme="dark"] .bg-emerald-100 { background-color: #064e3b !important; }
-[data-theme="dark"] .bg-emerald-50\/50 { background-color: rgba(6, 78, 59, 0.5) !important; }
-[data-theme="dark"] .from-slate-100 { background-color: #334155 !important; }
-[data-theme="dark"] .to-gray-50 { background-color: #1e293b !important; }
-[data-theme="dark"] .to-slate-50 { background-color: #1e293b !important; }
+[data-theme="dark"] .bg-slate-100 {
+  background-color: #334155 !important;
+}
+
+[data-theme="dark"] .bg-slate-200 {
+  background-color: #475569 !important;
+}
+
+[data-theme="dark"] .bg-gray-50 {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .via-slate-50 {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .bg-emerald-100 {
+  background-color: #064e3b !important;
+}
+
+[data-theme="dark"] .bg-emerald-50\/50 {
+  background-color: rgba(6, 78, 59, 0.5) !important;
+}
+
+[data-theme="dark"] .from-slate-100 {
+  background-color: #334155 !important;
+}
+
+[data-theme="dark"] .to-gray-50 {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .to-slate-50 {
+  background-color: #1e293b !important;
+}
 
 /* Index: card Accesos Externos (fondo claro que quedaba en blanco) */
 [data-theme="dark"] .bg-gradient-to-br.from-white.via-slate-50.to-gray-50 {
@@ -68,12 +123,29 @@
 }
 
 /* Bordes */
-[data-theme="dark"] .border-slate-200 { border-color: #475569 !important; }
-[data-theme="dark"] .border-slate-300 { border-color: #475569 !important; }
-[data-theme="dark"] .border-slate-400 { border-color: #64748b !important; }
-[data-theme="dark"] .border-emerald-400 { border-color: #059669 !important; }
-[data-theme="dark"] .border-emerald-600 { border-color: #10b981 !important; }
-[data-theme="dark"] .border-emerald-100 { border-color: #065f46 !important; }
+[data-theme="dark"] .border-slate-200 {
+  border-color: #475569 !important;
+}
+
+[data-theme="dark"] .border-slate-300 {
+  border-color: #475569 !important;
+}
+
+[data-theme="dark"] .border-slate-400 {
+  border-color: #64748b !important;
+}
+
+[data-theme="dark"] .border-emerald-400 {
+  border-color: #059669 !important;
+}
+
+[data-theme="dark"] .border-emerald-600 {
+  border-color: #10b981 !important;
+}
+
+[data-theme="dark"] .border-emerald-100 {
+  border-color: #065f46 !important;
+}
 
 /* Login: card y main */
 [data-theme="dark"] main.bg-gradient-to-br.from-green-100 {
@@ -101,16 +173,31 @@
   border-color: #334155 !important;
 }
 
-[data-theme="dark"] footer .text-slate-600 { color: #94a3b8 !important; }
+[data-theme="dark"] footer .text-slate-600 {
+  color: #94a3b8 !important;
+}
 
 /* Enlaces en contenido (no header) */
-[data-theme="dark"] main a.text-emerald-600 { color: #34d399 !important; }
-[data-theme="dark"] main a.text-emerald-700 { color: #6ee7b7 !important; }
-[data-theme="dark"] main a.text-slate-800 { color: #cbd5e1 !important; }
+[data-theme="dark"] main a.text-emerald-600 {
+  color: #34d399 !important;
+}
+
+[data-theme="dark"] main a.text-emerald-700 {
+  color: #6ee7b7 !important;
+}
+
+[data-theme="dark"] main a.text-slate-800 {
+  color: #cbd5e1 !important;
+}
 
 /* Botones secundarios (Cancelar, etc.) */
-[data-theme="dark"] a.bg-slate-200:hover { background-color: #475569 !important; }
-[data-theme="dark"] .bg-slate-200.text-slate-700 { color: #e2e8f0 !important; }
+[data-theme="dark"] a.bg-slate-200:hover {
+  background-color: #475569 !important;
+}
+
+[data-theme="dark"] .bg-slate-200.text-slate-700 {
+  color: #e2e8f0 !important;
+}
 
 /* Cuenta: sidebar y header ya usan gradiente; contenido y cards */
 [data-theme="dark"] .cuenta-page {
@@ -125,51 +212,135 @@
 }
 
 /* Sidebar: "Sistema de Gestión Proyecta. UTCH" - más legible pero oscuro */
-[data-theme="dark"] .sidebar-nav .text-slate-600 { color: #94a3b8 !important; }
-[data-theme="dark"] .sidebar-nav .text-slate-800 { color: #cbd5e1 !important; }
-[data-theme="dark"] .sidebar-nav .text-slate-500 { color: #94a3b8 !important; }
-[data-theme="dark"] .sidebar-nav .text-emerald-600 { color: #64748b !important; }
+[data-theme="dark"] .sidebar-nav .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .sidebar-nav .text-slate-800 {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .sidebar-nav .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .sidebar-nav .text-emerald-600 {
+  color: #64748b !important;
+}
+
 [data-theme="dark"] .sidebar-nav .uppercase.tracking-wider {
   color: #94a3b8 !important;
   font-weight: 600 !important;
 }
+
 [data-theme="dark"] .sidebar-nav h1.text-2xl {
   color: #cbd5e1 !important;
   font-weight: 700 !important;
 }
+
 [data-theme="dark"] .sidebar-nav h1 .text-emerald-600 {
   color: #64748b !important;
 }
-[data-theme="dark"] .sidebar-nav .border-slate-200 { border-color: #334155 !important; }
-[data-theme="dark"] .sidebar-nav .from-slate-100 { background-color: #1e293b !important; }
-[data-theme="dark"] .sidebar-nav .to-white { background-color: #1e293b !important; }
-[data-theme="dark"] .sidebar-nav .hover\:bg-emerald-50:hover { background-color: #064e3b !important; }
-[data-theme="dark"] .sidebar-nav .hover\:text-emerald-800:hover { color: #6ee7b7 !important; }
 
-[data-theme="dark"] .cuenta-card.bg-white { background-color: #1e293b !important; }
-[data-theme="dark"] .cuenta-card .border-slate-200 { border-color: #475569 !important; }
-[data-theme="dark"] .cuenta-card .bg-slate-50 { background-color: #334155 !important; }
-[data-theme="dark"] .cuenta-card .text-slate-800 { color: #e2e8f0 !important; }
-[data-theme="dark"] .cuenta-card .text-slate-600 { color: #94a3b8 !important; }
-[data-theme="dark"] .cuenta-card .text-slate-700 { color: #cbd5e1 !important; }
-[data-theme="dark"] .cuenta-card .bg-slate-100 { background-color: #334155 !important; }
-[data-theme="dark"] .cuenta-card .border-slate-300 { border-color: #475569 !important; }
-[data-theme="dark"] .cuenta-card .from-slate-100 { background-color: #334155 !important; }
-[data-theme="dark"] .cuenta-card .to-gray-100 { background-color: #334155 !important; }
-[data-theme="dark"] .cuenta-card .bg-white { background-color: #334155 !important; }
-[data-theme="dark"] .cuenta-card .text-emerald-900 { color: #a7f3d0 !important; }
-[data-theme="dark"] .cuenta-card .text-emerald-700 { color: #6ee7b7 !important; }
-[data-theme="dark"] .cuenta-card .border-emerald-100 { border-color: #065f46 !important; }
-[data-theme="dark"] .cuenta-card .bg-emerald-50\/50 { background-color: rgba(6, 78, 59, 0.4) !important; }
-[data-theme="dark"] .cuenta-card code { background-color: #1e293b !important; color: #f87171 !important; border-color: #475569 !important; }
-[data-theme="dark"] .cuenta-card .bg-red-50 { background-color: #450a0a !important; }
+[data-theme="dark"] .sidebar-nav .border-slate-200 {
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .sidebar-nav .from-slate-100 {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .sidebar-nav .to-white {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .sidebar-nav .hover\:bg-emerald-50:hover {
+  background-color: #064e3b !important;
+}
+
+[data-theme="dark"] .sidebar-nav .hover\:text-emerald-800:hover {
+  color: #6ee7b7 !important;
+}
+
+[data-theme="dark"] .cuenta-card.bg-white {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .cuenta-card .border-slate-200 {
+  border-color: #475569 !important;
+}
+
+[data-theme="dark"] .cuenta-card .bg-slate-50 {
+  background-color: #334155 !important;
+}
+
+[data-theme="dark"] .cuenta-card .text-slate-800 {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .cuenta-card .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .cuenta-card .text-slate-700 {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .cuenta-card .bg-slate-100 {
+  background-color: #334155 !important;
+}
+
+[data-theme="dark"] .cuenta-card .border-slate-300 {
+  border-color: #475569 !important;
+}
+
+[data-theme="dark"] .cuenta-card .from-slate-100 {
+  background-color: #334155 !important;
+}
+
+[data-theme="dark"] .cuenta-card .to-gray-100 {
+  background-color: #334155 !important;
+}
+
+[data-theme="dark"] .cuenta-card .bg-white {
+  background-color: #334155 !important;
+}
+
+[data-theme="dark"] .cuenta-card .text-emerald-900 {
+  color: #a7f3d0 !important;
+}
+
+[data-theme="dark"] .cuenta-card .text-emerald-700 {
+  color: #6ee7b7 !important;
+}
+
+[data-theme="dark"] .cuenta-card .border-emerald-100 {
+  border-color: #065f46 !important;
+}
+
+[data-theme="dark"] .cuenta-card .bg-emerald-50\/50 {
+  background-color: rgba(6, 78, 59, 0.4) !important;
+}
+
+[data-theme="dark"] .cuenta-card code {
+  background-color: #1e293b !important;
+  color: #f87171 !important;
+  border-color: #475569 !important;
+}
+
+[data-theme="dark"] .cuenta-card .bg-red-50 {
+  background-color: #450a0a !important;
+}
 
 /* Cuenta: círculo foto perfil (placeholder blanco) */
 [data-theme="dark"] .cuenta-card .from-slate-200.via-slate-100.to-gray-100,
 [data-theme="dark"] .cuenta-card .bg-gradient-to-br.from-slate-200 {
   background: linear-gradient(to bottom right, #334155, #475569) !important;
 }
-[data-theme="dark"] .cuenta-card .ring-slate-300\/70 { --tw-ring-color: rgba(71, 85, 105, 0.7) !important; }
+
+[data-theme="dark"] .cuenta-card .ring-slate-300\/70 {
+  --tw-ring-color: rgba(71, 85, 105, 0.7) !important;
+}
 
 /* Cuenta: botón Acceder (fondo blanco) */
 [data-theme="dark"] .cuenta-card button.bg-white {
@@ -177,6 +348,7 @@
   color: #e2e8f0 !important;
   border-color: #475569 !important;
 }
+
 [data-theme="dark"] .cuenta-card button.bg-white:hover {
   background-color: #475569 !important;
   border-color: #64748b !important;
@@ -192,6 +364,7 @@
 [data-theme="dark"] .cuenta-card .bg-gradient-to-r.from-slate-100.to-gray-100 {
   background: linear-gradient(to right, #334155, #475569) !important;
 }
+
 [data-theme="dark"] .cuenta-card .border-b-2.border-slate-300 {
   border-color: #475569 !important;
 }
@@ -200,55 +373,88 @@
 [data-theme="dark"] .cuenta-card .border-r-2.border-slate-200 {
   border-color: #475569 !important;
 }
+
 [data-theme="dark"] .cuenta-card .bg-slate-200 {
   background-color: #334155 !important;
   color: #e2e8f0 !important;
   border-color: #475569 !important;
 }
+
 [data-theme="dark"] .cuenta-card .text-slate-600.ph {
   color: #94a3b8 !important;
 }
+
 [data-theme="dark"] .cuenta-card .text-emerald-700 {
   color: #6ee7b7 !important;
 }
+
 [data-theme="dark"] .cuenta-card .text-emerald-900 {
   color: #a7f3d0 !important;
 }
 
-[data-theme="dark"] .text-emerald-600 { color: #34d399 !important; }
-[data-theme="dark"] .text-slate-800 { color: #e2e8f0 !important; }
+[data-theme="dark"] .text-emerald-600 {
+  color: #34d399 !important;
+}
+
+[data-theme="dark"] .text-slate-800 {
+  color: #e2e8f0 !important;
+}
 
 /* Información alumno: body y fondo principal - totalmente oscuro */
 [data-theme="dark"] body {
   background: linear-gradient(to bottom, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
   color: #e2e8f0 !important;
 }
-[data-theme="dark"] .main { 
-  background: transparent !important; 
+
+[data-theme="dark"] .main {
+  background: transparent !important;
   color: var(--texto) !important;
 }
+
 [data-theme="dark"] .page-head {
   background: transparent !important;
   color: var(--texto) !important;
 }
-[data-theme="dark"] .card { 
-  background-color: var(--fondo-card) !important; 
-  border-color: var(--borde) !important; 
+
+[data-theme="dark"] .card {
+  background-color: var(--fondo-card) !important;
+  border-color: var(--borde) !important;
   box-shadow: var(--sombra) !important;
 }
+
 [data-theme="dark"] .sidebar-nav.w-64.bg-gradient-to-b {
   background: linear-gradient(to bottom, #1e293b, #0f172a) !important;
   border-color: #334155 !important;
 }
+
 [data-theme="dark"] .sidebar-nav .bg-gradient-to-b.from-slate-100.to-white {
   background: linear-gradient(to bottom, #334155, #1e293b) !important;
   border-color: #475569 !important;
 }
-[data-theme="dark"] .sidebar-header { background-color: #1e293b !important; border-color: var(--borde) !important; }
-[data-theme="dark"] .sidebar-user-info .sidebar-matricula { color: var(--texto-suave) !important; }
-[data-theme="dark"] .sidebar-link { color: var(--texto) !important; }
-[data-theme="dark"] .sidebar-link:hover { background: #334155 !important; color: #6ee7b7 !important; }
-[data-theme="dark"] .sidebar-link-active { background: rgba(16, 185, 129, 0.25) !important; color: #6ee7b7 !important; }
+
+[data-theme="dark"] .sidebar-header {
+  background-color: #1e293b !important;
+  border-color: var(--borde) !important;
+}
+
+[data-theme="dark"] .sidebar-user-info .sidebar-matricula {
+  color: var(--texto-suave) !important;
+}
+
+[data-theme="dark"] .sidebar-link {
+  color: var(--texto) !important;
+}
+
+[data-theme="dark"] .sidebar-link:hover {
+  background: #334155 !important;
+  color: #6ee7b7 !important;
+}
+
+[data-theme="dark"] .sidebar-link-active {
+  background: rgba(16, 185, 129, 0.25) !important;
+  color: #6ee7b7 !important;
+}
+
 /* Información alumno: sidebar link activo con clases de Tailwind - más resaltado */
 [data-theme="dark"] .sidebar-link-active-custom {
   background: rgba(16, 185, 129, 0.35) !important;
@@ -256,40 +462,55 @@
   font-weight: 600 !important;
   border-left: 3px solid #059669 !important;
 }
+
 [data-theme="dark"] .sidebar-link-active-custom:hover {
   background: rgba(16, 185, 129, 0.45) !important;
 }
+
 [data-theme="dark"] .sidebar-nav a.text-slate-600 {
   color: #94a3b8 !important;
 }
+
 [data-theme="dark"] .sidebar-nav a.text-slate-600:hover {
   color: #6ee7b7 !important;
 }
-[data-theme="dark"] .sidebar-content { background: transparent !important; }
-[data-theme="dark"] .sidebar-menu { background: transparent !important; }
+
+[data-theme="dark"] .sidebar-content {
+  background: transparent !important;
+}
+
+[data-theme="dark"] .sidebar-menu {
+  background: transparent !important;
+}
+
 /* Información alumno: expediente - eliminar todos los fondos blancos */
 [data-theme="dark"] .expediente-grid {
   background: transparent !important;
 }
+
 [data-theme="dark"] .card {
   background-color: var(--fondo-card) !important;
   border-color: var(--borde) !important;
   box-shadow: var(--sombra) !important;
 }
+
 [data-theme="dark"] .card-body {
   background: linear-gradient(to bottom, #1e293b, #334155) !important;
   color: var(--texto) !important;
   min-height: 200px !important;
 }
+
 [data-theme="dark"] .card .card-body {
   background: linear-gradient(to bottom, #1e293b, #334155) !important;
 }
+
 [data-theme="dark"] .expediente-grid .card {
   display: flex !important;
   flex-direction: column !important;
   min-height: 320px !important;
   background: var(--fondo-card) !important;
 }
+
 [data-theme="dark"] .card-basica .card-body,
 [data-theme="dark"] .card-escolar .card-body,
 [data-theme="dark"] .card-otros .card-body {
@@ -297,10 +518,12 @@
   flex: 1 !important;
   min-height: 0 !important;
 }
+
 [data-theme="dark"] .card-header {
   background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%) !important;
   color: #fff !important;
 }
+
 [data-theme="dark"] .periodo-actual {
   background: linear-gradient(180deg, #065f46 0%, #047857 50%, #059669 100%) !important;
   color: #fff !important;
@@ -309,63 +532,95 @@
   font-size: 0.85rem !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
+
 [data-theme="dark"] .foto-placeholder {
   background: transparent !important;
 }
+
 [data-theme="dark"] .foto-placeholder-text {
   background: linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%) !important;
   color: #fff !important;
 }
+
 [data-theme="dark"] .foto-placeholder-ring {
   border-color: #059669 !important;
 }
-[data-theme="dark"] .page-title { color: var(--texto) !important; }
-[data-theme="dark"] .page-head { color: var(--texto) !important; }
+
+[data-theme="dark"] .page-title {
+  color: var(--texto) !important;
+}
+
+[data-theme="dark"] .page-head {
+  color: var(--texto) !important;
+}
+
 [data-theme="dark"] .btn-back {
   background: var(--utch-verde) !important;
   color: #fff !important;
 }
+
 [data-theme="dark"] .btn-back:hover {
   background: var(--utch-verde-hover) !important;
 }
+
 [data-theme="dark"] .status-badge {
   background: rgba(16, 185, 129, 0.2) !important;
   color: #6ee7b7 !important;
   border: 1px solid rgba(16, 185, 129, 0.3) !important;
 }
+
 [data-theme="dark"] .grade-badge {
   background: rgba(16, 185, 129, 0.2) !important;
   color: #6ee7b7 !important;
   border: 1px solid rgba(16, 185, 129, 0.3) !important;
 }
+
 [data-theme="dark"] .tutor-link {
   color: #6ee7b7 !important;
 }
+
 [data-theme="dark"] .tutor-link:hover {
   color: #34d399 !important;
 }
-[data-theme="dark"] .acciones { background-color: var(--fondo-card) !important; border-color: var(--borde) !important; }
+
+[data-theme="dark"] .acciones {
+  background-color: var(--fondo-card) !important;
+  border-color: var(--borde) !important;
+}
+
 [data-theme="dark"] .tabs {
   border-color: var(--borde) !important;
 }
+
 [data-theme="dark"] .tab {
   color: var(--texto) !important;
   background: transparent !important;
 }
+
 [data-theme="dark"] .tab:hover {
   background: #334155 !important;
   color: #6ee7b7 !important;
 }
+
 [data-theme="dark"] .tab-active {
   background: #334155 !important;
   color: #6ee7b7 !important;
   border-bottom-color: #059669 !important;
 }
-[data-theme="dark"] .tab-panel { color: var(--texto) !important; }
+
+[data-theme="dark"] .tab-panel {
+  color: var(--texto) !important;
+}
+
 [data-theme="dark"] .tabla-materias,
 [data-theme="dark"] .tabla-asistencias,
 [data-theme="dark"] .tabla-estadias,
-[data-theme="dark"] .tabla-boletas { background-color: var(--fondo-card) !important; color: var(--texto) !important; border-color: var(--borde) !important; }
+[data-theme="dark"] .tabla-boletas {
+  background-color: var(--fondo-card) !important;
+  color: var(--texto) !important;
+  border-color: var(--borde) !important;
+}
+
 [data-theme="dark"] .tabla-materias th,
 [data-theme="dark"] .tabla-materias td,
 [data-theme="dark"] .tabla-asistencias th,
@@ -373,62 +628,84 @@
 [data-theme="dark"] .tabla-estadias th,
 [data-theme="dark"] .tabla-estadias td,
 [data-theme="dark"] .tabla-boletas th,
-[data-theme="dark"] .tabla-boletas td { border-color: var(--borde) !important; }
-[data-theme="dark"] .leyenda-table { 
-  background-color: var(--fondo-card) !important; 
+[data-theme="dark"] .tabla-boletas td {
+  border-color: var(--borde) !important;
+}
+
+[data-theme="dark"] .leyenda-table {
+  background-color: var(--fondo-card) !important;
   color: var(--texto) !important;
   border-color: var(--borde) !important;
 }
+
 [data-theme="dark"] .leyenda-table th,
-[data-theme="dark"] .leyenda-table td { 
+[data-theme="dark"] .leyenda-table td {
   border-color: var(--borde) !important;
   color: #e2e8f0 !important;
 }
+
 [data-theme="dark"] .leyenda-table tbody tr {
   background: #334155 !important;
   color: #e2e8f0 !important;
 }
+
 [data-theme="dark"] .leyenda-table tbody tr:nth-child(even) {
   background: #1e293b !important;
 }
+
 [data-theme="dark"] .leyenda-table tbody tr:hover,
 [data-theme="dark"] .leyenda-table tbody tr:focus-within {
   background: #475569 !important;
 }
+
 [data-theme="dark"] .leyenda-table tbody td {
   color: #e2e8f0 !important;
   font-weight: 500 !important;
 }
+
 [data-theme="dark"] .leyenda-table tbody tr:hover td,
 [data-theme="dark"] .leyenda-table tbody tr:focus-within td {
   color: #fff !important;
   font-weight: 600 !important;
 }
+
 [data-theme="dark"] .leyenda-colores {
   background: var(--fondo-card) !important;
   border-color: var(--borde) !important;
   border-radius: 10px !important;
   overflow: hidden !important;
 }
-[data-theme="dark"] .periodo-bar { background-color: #334155 !important; border-color: var(--borde) !important; }
-[data-theme="dark"] .lista-periodos { color: var(--texto) !important; }
-[data-theme="dark"] .data-list dt { 
-  color: #94a3b8 !important; 
+
+[data-theme="dark"] .periodo-bar {
+  background-color: #334155 !important;
+  border-color: var(--borde) !important;
+}
+
+[data-theme="dark"] .lista-periodos {
+  color: var(--texto) !important;
+}
+
+[data-theme="dark"] .data-list dt {
+  color: #94a3b8 !important;
   font-weight: 700 !important;
 }
-[data-theme="dark"] .data-list dd { 
-  color: #e2e8f0 !important; 
+
+[data-theme="dark"] .data-list dd {
+  color: #e2e8f0 !important;
   font-weight: 500 !important;
 }
+
 [data-theme="dark"] .data-item-code dd {
   background: #334155 !important;
   border-color: var(--borde) !important;
   color: #e2e8f0 !important;
 }
+
 [data-theme="dark"] .contact-value {
   color: #e2e8f0 !important;
   font-weight: 600 !important;
 }
+
 [data-theme="dark"] .contact-label {
   color: #94a3b8 !important;
 }
@@ -443,63 +720,85 @@
   background: #334155 !important;
   border-color: var(--borde) !important;
 }
+
 [data-theme="dark"] .data-item:nth-child(even) {
   background: #1e293b !important;
 }
+
 [data-theme="dark"] .data-item:hover,
 [data-theme="dark"] .data-item-highlight:hover,
 [data-theme="dark"] .data-item-badge:hover {
   background: #475569 !important;
   transform: translateX(4px);
 }
+
 [data-theme="dark"] .data-item:nth-child(even):hover {
   background: #475569 !important;
 }
+
 [data-theme="dark"] .data-item-highlight {
   background: linear-gradient(to right, rgba(16, 185, 129, 0.2), transparent) !important;
   border-left-color: #059669 !important;
 }
+
 [data-theme="dark"] .data-item-badge {
   background: rgba(16, 185, 129, 0.15) !important;
 }
+
 [data-theme="dark"] .data-item-code dd {
   background: #334155 !important;
   border-color: var(--borde) !important;
   color: var(--texto) !important;
 }
+
 [data-theme="dark"] .address-text {
   background: #334155 !important;
   border-left-color: #64748b !important;
   color: var(--texto) !important;
 }
+
 [data-theme="dark"] .data-item-address {
   background: #334155 !important;
   border-color: var(--borde) !important;
 }
+
 [data-theme="dark"] .data-item-address:hover {
   background: #475569 !important;
 }
+
 [data-theme="dark"] .contact-label {
   color: var(--texto-suave) !important;
 }
+
 [data-theme="dark"] .contact-value {
   color: var(--texto) !important;
 }
-[data-theme="dark"] .btn-descargar { background-color: #334155 !important; color: var(--texto) !important; border-color: var(--borde) !important; }
-[data-theme="dark"] .btn-descargar:hover { background-color: #475569 !important; }
+
+[data-theme="dark"] .btn-descargar {
+  background-color: #334155 !important;
+  color: var(--texto) !important;
+  border-color: var(--borde) !important;
+}
+
+[data-theme="dark"] .btn-descargar:hover {
+  background-color: #475569 !important;
+}
 
 /* Información alumno: Sección Acciones - header wrapper (fondo blanco) */
 [data-theme="dark"] .acciones-header-wrapper {
   background: linear-gradient(to right, #1e293b, #334155) !important;
   border-color: var(--borde) !important;
 }
+
 [data-theme="dark"] .acciones-title {
   -webkit-text-fill-color: #6ee7b7 !important;
   color: #6ee7b7 !important;
 }
+
 [data-theme="dark"] .acciones-title svg {
   color: #6ee7b7 !important;
 }
+
 [data-theme="dark"] .acciones-badge {
   background: #475569 !important;
   color: #e2e8f0 !important;
@@ -510,9 +809,11 @@
   background: var(--fondo-card) !important;
   color: var(--texto) !important;
 }
+
 [data-theme="dark"] .tab-panel-active {
   background: linear-gradient(to bottom, var(--fondo-card), #334155) !important;
 }
+
 [data-theme="dark"] .tab-content-header {
   background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%) !important;
   color: #fff !important;
@@ -522,18 +823,22 @@
 [data-theme="dark"] .tabla-materias tbody tr:nth-child(even) {
   background: #334155 !important;
 }
+
 [data-theme="dark"] .tabla-materias tbody tr:nth-child(odd) {
   background: #1e293b !important;
 }
+
 [data-theme="dark"] .tabla-materias tbody tr:hover {
   background: #475569 !important;
   transform: scale(1.002);
   box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3) !important;
 }
+
 [data-theme="dark"] .tabla-materias tbody td {
   color: var(--texto) !important;
   border-color: var(--borde) !important;
 }
+
 [data-theme="dark"] .tabla-materias tbody td:first-child {
   color: #6ee7b7 !important;
 }
@@ -549,20 +854,25 @@
 [data-theme="dark"] .tabla-asistencias tbody tr:nth-child(even) {
   background: #334155 !important;
 }
+
 [data-theme="dark"] .tabla-asistencias tbody tr:nth-child(odd) {
   background: #1e293b !important;
 }
+
 [data-theme="dark"] .tabla-asistencias tbody tr:hover {
   background: #475569 !important;
 }
+
 [data-theme="dark"] .tabla-asistencias tbody td {
   color: var(--texto) !important;
   border-color: var(--borde) !important;
 }
+
 [data-theme="dark"] .tabla-asistencias-titulo {
   color: var(--texto) !important;
   border-color: var(--borde) !important;
 }
+
 [data-theme="dark"] .tabla-asistencias .celda-verde {
   background: rgba(16, 185, 129, 0.2) !important;
   color: #6ee7b7 !important;
@@ -572,12 +882,15 @@
 [data-theme="dark"] .tabla-estadias tbody tr {
   background: var(--fondo-card) !important;
 }
+
 [data-theme="dark"] .tabla-estadias tbody tr:nth-child(even) {
   background: #334155 !important;
 }
+
 [data-theme="dark"] .tabla-estadias tbody tr:hover {
   background: #475569 !important;
 }
+
 [data-theme="dark"] .tabla-estadias .fila-sin-datos td {
   background: #334155 !important;
   color: var(--texto-suave) !important;
@@ -588,12 +901,15 @@
 [data-theme="dark"] .tabla-boletas tbody tr:nth-child(even) {
   background: #334155 !important;
 }
+
 [data-theme="dark"] .tabla-boletas tbody tr:nth-child(odd) {
   background: #1e293b !important;
 }
+
 [data-theme="dark"] .tabla-boletas tbody tr:hover {
   background: #475569 !important;
 }
+
 [data-theme="dark"] .tabla-boletas tbody td {
   color: var(--texto) !important;
   border-color: var(--borde) !important;
@@ -603,15 +919,19 @@
 [data-theme="dark"] .leyenda-table tbody tr {
   background: var(--fondo-card) !important;
 }
+
 [data-theme="dark"] .leyenda-table tbody tr:nth-child(even) {
   background: #334155 !important;
 }
+
 [data-theme="dark"] .leyenda-table tbody tr:hover {
   background: #475569 !important;
 }
+
 [data-theme="dark"] .leyenda-table tbody td {
   color: var(--texto) !important;
 }
+
 [data-theme="dark"] .leyenda-aviso {
   color: #fca5a5 !important;
   background: rgba(220, 38, 38, 0.1) !important;
@@ -619,6 +939,7 @@
   border-radius: 8px !important;
   border-left: 3px solid #dc2626 !important;
 }
+
 [data-theme="dark"] .leyenda-retardos {
   color: #fbbf24 !important;
   background: rgba(251, 191, 36, 0.1) !important;
@@ -633,41 +954,84 @@
   border-radius: 12px !important;
   box-shadow: var(--sombra) !important;
 }
+
 [data-theme="dark"] .historial-periodos h3 {
   color: var(--texto) !important;
 }
+
 [data-theme="dark"] .lista-periodos li:nth-child(odd) {
   background: #334155 !important;
 }
+
 [data-theme="dark"] .lista-periodos li:nth-child(even) {
   background: #1e293b !important;
 }
+
 [data-theme="dark"] .lista-periodos li:hover {
   background: #475569 !important;
   border-color: #059669 !important;
 }
-[data-theme="dark"] .p-periodo { color: #cbd5e1 !important; font-weight: 600 !important; }
-[data-theme="dark"] .p-grupo { color: #94a3b8 !important; font-weight: 500 !important; }
-[data-theme="dark"] .p-grado { color: #94a3b8 !important; font-weight: 500 !important; }
-[data-theme="dark"] .p-promedio { color: #6ee7b7 !important; font-weight: 700 !important; }
+
+[data-theme="dark"] .p-periodo {
+  color: #cbd5e1 !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .p-grupo {
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="dark"] .p-grado {
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="dark"] .p-promedio {
+  color: #6ee7b7 !important;
+  font-weight: 700 !important;
+}
 
 /* Información alumno: Periodo bar (barra de información) */
 [data-theme="dark"] .periodo-bar {
   background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%) !important;
   color: #fff !important;
 }
+
 [data-theme="dark"] .periodo-bar-item {
   color: #fff !important;
 }
-[data-theme="dark"] .periodo-label { color: rgba(255, 255, 255, 0.9) !important; }
-[data-theme="dark"] .periodo-value { color: #fff !important; }
-[data-theme="dark"] .promedio-number { color: #fff !important; }
+
+[data-theme="dark"] .periodo-label {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .periodo-value {
+  color: #fff !important;
+}
+
+[data-theme="dark"] .promedio-number {
+  color: #fff !important;
+}
 
 /* Scrollbars en dark mode */
-[data-theme="dark"] ::-webkit-scrollbar { width: 10px; height: 10px; }
-[data-theme="dark"] ::-webkit-scrollbar-track { background: #1e293b; }
-[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #475569; border-radius: 5px; }
-[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 5px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
 
 /* Toggle botón: estilo común en header */
 .theme-toggle-btn {
@@ -683,21 +1047,27 @@
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
 }
+
 .theme-toggle-btn:hover {
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
 }
+
 .theme-toggle-icon {
   display: inline-flex;
   width: 20px;
   height: 20px;
 }
+
 .theme-toggle-label {
   font-size: 0.75rem;
   font-weight: 600;
 }
+
 @media (max-width: 640px) {
-  .theme-toggle-label { display: none; }
+  .theme-toggle-label {
+    display: none;
+  }
 }
 
 /* ============================================
