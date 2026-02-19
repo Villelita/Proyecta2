@@ -10,23 +10,23 @@ body.cuenta-page {
   font-family: 'Inter', sans-serif;
 }
 
-/* Variables CSS - tema estudiantil verde esmeralda vibrante */
+/* Variables CSS - tema verde más contrastado */
 :root {
-  --utch-verde: #059669;
-  --utch-verde-claro: #10b981;
-  --utch-verde-hover: #047857;
-  --verde-lima: #84cc16;
-  --verde-menta: #d1fae5;
-  --verde-menta-claro: #ecfdf5;
-  --extraordinaria: #ef4444;
+  --utch-verde: #047857;
+  --utch-verde-claro: #059669;
+  --utch-verde-hover: #065f46;
+  --verde-lima: #65a30d;
+  --verde-menta: #a7f3d0;
+  --verde-menta-claro: #d1fae5;
+  --extraordinaria: #dc2626;
 }
 
 .utch-green {
-  background-color: #059669;
+  background-color: #047857;
 }
 
 .utch-green-text {
-  color: #059669;
+  color: #047857;
 }
 
 /* Animaciones sutiles - Cuenta */
@@ -135,9 +135,9 @@ body.cuenta-page {
    ============================================ */
 
 .header-cuenta {
-  background: linear-gradient(135deg, #047857 0%, #059669 40%, #10b981 80%, #84cc16 100%);
+  background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%);
   color: #fff;
-  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.25);
+  box-shadow: 0 4px 20px rgba(2, 70, 55, 0.4);
   position: sticky;
   top: 0;
   z-index: 100;

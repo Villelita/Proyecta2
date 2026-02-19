@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="styles.css">
   <style>body{font-family:'Plus Jakarta Sans',sans-serif;}</style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-lime-50 text-slate-800 antialiased flex flex-col">
+<body class="min-h-screen bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100 text-slate-900 antialiased flex flex-col">
   <!-- Header: Inicio de sesión o Cuenta (si hay sesión) -->
-  <header class="bg-gradient-to-r from-emerald-700 via-emerald-600 to-emerald-500 border-b-2 border-emerald-400 sticky top-0 z-20 shadow-lg shadow-emerald-900/20">
+  <header class="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 border-b-4 border-emerald-500 sticky top-0 z-20 shadow-xl shadow-emerald-900/30">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <a href="index.html" class="flex items-center gap-3 no-underline group">
@@ -40,8 +40,8 @@
     (function(){var s=localStorage.getItem('proyecta_session');var c=document.getElementById('header-cuenta');var l=document.getElementById('header-login');if(s&&c&&l){c.classList.remove('hidden');c.classList.add('flex');l.classList.add('hidden');}}());
   </script>
 
-  <!-- Hero: fondo verde vibrante con formas + logo PROYECTA + BIENVENIDO -->
-  <section class="bg-gradient-to-br from-emerald-600 via-emerald-500 to-green-500 relative min-h-[400px] flex flex-col items-center justify-center px-4 py-20 overflow-hidden">
+  <!-- Hero: fondo verde más oscuro -->
+  <section class="bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-700 relative min-h-[400px] flex flex-col items-center justify-center px-4 py-20 overflow-hidden shadow-inner">
     <!-- Formas decorativas animadas -->
     <div class="shape w-40 h-24 top-[15%] left-[10%] animate-pulse-slow"></div>
     <div class="shape w-32 h-32 top-[25%] right-[12%] animate-pulse-slow" style="animation-delay: 0.5s"></div>
@@ -60,7 +60,7 @@
         <span class="text-sm text-white/80 align-top">®</span>
       </div>
       <p class="text-emerald-50 text-lg mb-6 font-medium">Sistema de Gestión Estudiantil</p>
-      <div class="inline-block mt-4 px-10 py-4 bg-gradient-to-r from-lime-400 to-lime-300 rounded-2xl border-2 border-white/30 text-emerald-900 font-bold text-xl shadow-2xl hover:shadow-emerald-900/40 transition-all duration-300 hover:scale-105 hover:from-lime-300 hover:to-lime-200">
+      <div class="inline-block mt-4 px-10 py-4 bg-gradient-to-r from-lime-400 to-emerald-400 rounded-2xl border-2 border-white/50 text-emerald-900 font-bold text-xl shadow-2xl hover:shadow-emerald-900/50 transition-all duration-300 hover:scale-105">
         BIENVENIDO
       </div>
     </div>
@@ -70,72 +70,74 @@
   <main class="flex-1 bg-transparent py-12 md:py-16">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-10">
-        <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Accesos rápidos</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mt-1">Servicios y enlaces</h2>
+        <p class="text-emerald-700 font-bold text-sm uppercase tracking-wider">Accesos rápidos</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">Servicios y enlaces</h2>
       </div>
       <div class="grid md:grid-cols-2 gap-8 md:gap-10">
         <!-- Accesos Proyecta -->
         <div class="animate-fade-in-up" style="animation-delay: 0.1s">
-          <div class="bg-white rounded-2xl shadow-xl border-2 border-emerald-200 p-6 md:p-8 hover:shadow-2xl hover:border-emerald-400 transition-all duration-300">
-            <h2 class="text-3xl font-bold text-emerald-800 mb-2 flex items-center gap-2">
+          <div class="bg-white rounded-2xl shadow-xl border-2 border-emerald-400 p-6 md:p-8 hover:shadow-2xl hover:border-emerald-600 transition-all duration-300 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-slate-100 rounded-full -mr-16 -mt-16 opacity-50"></div>
+            <div class="relative z-10">
+            <h2 class="text-3xl font-bold text-emerald-900 mb-2 flex items-center gap-2">
               <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
               Accesos Proyecta
             </h2>
-            <p class="text-emerald-600 mb-6 text-sm">Servicios internos del sistema</p>
+            <p class="text-emerald-700 mb-6 text-sm font-medium">Servicios internos del sistema</p>
             <ul class="space-y-2.5">
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 transition-all duration-200 hover:translate-x-1 group border-2 border-emerald-300 hover:border-emerald-500">
                 <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                 <span class="font-semibold">Proyecta Lite</span>
               </a></li>
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
-                <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition-all duration-200 hover:translate-x-1 group border-2 border-slate-300 hover:border-slate-400"><svg class="w-6 h-6 text-slate-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 <span class="font-semibold">Bolsa Trabajo Alumnos</span>
               </a></li>
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
-                <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 transition-all duration-200 hover:translate-x-1 group border-2 border-emerald-300 hover:border-emerald-500"><svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 <span class="font-semibold">Bolsa Trabajo RH</span>
               </a></li>
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
-                <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition-all duration-200 hover:translate-x-1 group border-2 border-slate-300 hover:border-slate-400"><svg class="w-6 h-6 text-slate-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                 <span class="font-semibold">Acceso para empresas</span>
               </a></li>
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
-                <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 transition-all duration-200 hover:translate-x-1 group border-2 border-emerald-300 hover:border-emerald-500"><svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
                 <span class="font-semibold">Recuperación de Contraseña</span>
               </a></li>
             </ul>
+            </div>
           </div>
         </div>
         <!-- Accesos Externos -->
         <div class="animate-fade-in-up" style="animation-delay: 0.2s">
-          <div class="bg-white rounded-2xl shadow-xl border-2 border-emerald-200 p-6 md:p-8 hover:shadow-2xl hover:border-emerald-400 transition-all duration-300">
-            <h2 class="text-3xl font-bold text-emerald-800 mb-2 flex items-center gap-2">
-              <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m9-9a9 9 0 01-9-9"/></svg>
+          <div class="bg-gradient-to-br from-white via-slate-50 to-gray-50 rounded-2xl shadow-xl border-2 border-slate-300 p-6 md:p-8 hover:shadow-2xl hover:border-slate-400 transition-all duration-300 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-24 h-24 bg-emerald-100 rounded-full -ml-12 -mt-12 opacity-30"></div>
+            <div class="relative z-10">
+            <h2 class="text-3xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+              <svg class="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m9-9a9 9 0 01-9-9"/></svg>
               Accesos Externos
             </h2>
-            <p class="text-emerald-600 mb-6 text-sm">Enlaces a servicios externos</p>
+            <p class="text-slate-600 mb-6 text-sm font-medium">Enlaces a servicios externos</p>
             <ul class="space-y-2.5">
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
-                <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m9-9a9 9 0 01-9-9"/></svg>
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition-all duration-200 hover:translate-x-1 group border-2 border-slate-300 hover:border-slate-400">
+                <svg class="w-6 h-6 text-slate-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m9-9a9 9 0 01-9-9"/></svg>
                 <span class="font-semibold">Página Oficial UTCH</span>
               </a></li>
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 transition-all duration-200 hover:translate-x-1 group border-2 border-emerald-300 hover:border-emerald-500">
                 <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 <span class="font-semibold">Correo Opción 1</span>
               </a></li>
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
-                <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition-all duration-200 hover:translate-x-1 group border-2 border-slate-300 hover:border-slate-400">
+                <svg class="w-6 h-6 text-slate-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 <span class="font-semibold">Correo Opción 2</span>
               </a></li>
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 transition-all duration-200 hover:translate-x-1 group border-2 border-emerald-300 hover:border-emerald-500">
                 <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                 <span class="font-semibold">Moodle</span>
               </a></li>
-              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-900 transition-all duration-200 hover:translate-x-1 group border border-emerald-200 hover:border-emerald-300">
-                <svg class="w-6 h-6 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <li><a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition-all duration-200 hover:translate-x-1 group border-2 border-slate-300 hover:border-slate-400">
+                <svg class="w-6 h-6 text-slate-600 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span class="font-semibold">Aviso Privacidad</span>
               </a></li>
             </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -143,7 +145,7 @@
   </main>
 
   <!-- Footer institucional -->
-  <footer class="mt-auto bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 border-t-2 border-emerald-400 py-8 shadow-lg">
+  <footer class="mt-auto bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 border-t-4 border-emerald-500 py-8 shadow-xl">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <p class="text-white font-semibold text-sm">Proyecta · Sistema de Gestión Estudiantil</p>
       <p class="text-emerald-100 text-xs mt-1">Universidad Tecnológica de Chihuahua</p>
