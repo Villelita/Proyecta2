@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(){try{var t=localStorage.getItem('proyecta_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){}})();</script>
+  <link rel="stylesheet" href="theme.css">
   <title>Proyecta - Universidad Tecnológica de Chihuahua</title>
   <meta name="description" content="Sistema de Gestión Estudiantil de la Universidad Tecnológica de Chihuahua">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,6 +25,10 @@
         </a>
       </div>
       <div class="flex items-center gap-3">
+        <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">
+          <span class="theme-toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="theme-toggle-label">Oscuro</span>
+        </button>
         <a href="cuenta.html" id="header-cuenta" class="hidden flex items-center gap-2 bg-lime-400 hover:bg-lime-300 text-emerald-900 font-semibold text-sm px-5 py-2.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 no-underline">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
           Mi Cuenta
@@ -152,5 +158,6 @@
       <p class="text-emerald-200/80 text-xs mt-3">© 2025 UTCH. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script src="theme.js"></script>
 </body>
 </html>
