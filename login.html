@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(){try{var t=localStorage.getItem('proyecta_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){}})();</script>
+  <link rel="stylesheet" href="theme.css">
   <title>Inicio de sesión - Proyecta | Universidad Tecnológica de Chihuahua</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +26,13 @@
           <span class="text-emerald-100 text-xs">Universidad Tecnológica de Chihuahua</span>
         </div>
       </a>
-      <a href="index.html" class="text-white/90 hover:text-white text-sm font-medium transition">← Volver al inicio</a>
+      <div class="flex items-center gap-2">
+        <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">
+          <span class="theme-toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="theme-toggle-label">Oscuro</span>
+        </button>
+        <a href="index.html" class="text-white/90 hover:text-white text-sm font-medium transition">← Volver al inicio</a>
+      </div>
     </div>
   </header>
 
@@ -76,5 +84,6 @@
   <footer class="py-4 border-t-2 border-slate-300 bg-slate-50">
     <p class="text-center text-slate-600 text-xs font-medium">Proyecta · Universidad Tecnológica de Chihuahua · Todos los derechos reservados</p>
   </footer>
+  <script src="theme.js"></script>
 </body>
 </html>

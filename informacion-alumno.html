@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(){try{var t=localStorage.getItem('proyecta_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){}})();</script>
+  <link rel="stylesheet" href="theme.css">
   <title>Expediente del Alumno - Proyecta | Universidad Tecnológica de Chihuahua</title>
   <meta name="description" content="Expediente y información del alumno - Proyecta UTCH">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,22 +21,18 @@
   <label for="menu-toggle" class="menu-overlay" aria-label="Cerrar menú"></label>
 
   <!-- Sidebar / Navegación Lateral -->
-  <aside class="sidebar-nav">
-    <div class="sidebar-header">
-      <label for="menu-toggle" class="sidebar-close-btn" aria-label="Cerrar menú">
-        <i class="ph ph-x"></i>
-      </label>
-      <div class="sidebar-user-info">
-        <div class="sidebar-avatar">DA</div>
-        <span class="sidebar-matricula">6523150009</span>
-      </div>
+  <aside class="sidebar-nav w-64 bg-gradient-to-b from-white to-slate-50 border-r-2 border-slate-300 hidden md:flex flex-col flex-shrink-0 md:!flex shadow-sm">
+    <div class="p-6 flex flex-col items-center justify-center border-b-2 border-slate-200 bg-gradient-to-b from-slate-100 to-white">
+      <span class="text-xs font-semibold text-slate-600 uppercase tracking-wider">Sistema de Gestión</span>
+      <h1 class="text-2xl font-bold text-slate-800 tracking-tight mt-1">Proyecta<span class="text-emerald-600">.</span></h1>
+      <span class="text-xs text-slate-500 mt-0.5">UTCH</span>
     </div>
     
-    <nav class="sidebar-content">
-      <ul class="sidebar-menu">
+    <nav class="flex-1 overflow-y-auto py-4">
+      <ul class="space-y-1 px-3">
         <li>
-          <a href="informacion-alumno.html" class="sidebar-link sidebar-link-active">
-            <i class="ph ph-graduation-cap"></i>
+          <a href="informacion-alumno.html" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 hover:bg-emerald-50 hover:text-emerald-800 transition-colors duration-200 sidebar-link-active-custom">
+            <i class="ph ph-graduation-cap text-lg"></i>
             Información del Alumno
           </a>
         </li>
@@ -60,6 +58,10 @@
         <a href="#">Calendario</a>
       </nav>
       <div class="header-actions">
+        <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">
+          <span class="theme-toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="theme-toggle-label">Oscuro</span>
+        </button>
         <button class="icon-btn" title="Notificaciones">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
           <span class="badge">275</span>
@@ -425,5 +427,6 @@
       }
     })();
   </script>
+  <script src="theme.js"></script>
 </body>
 </html>
